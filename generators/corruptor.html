@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROM Corruptor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="black">
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css"> 
+	<script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.min.js"></script> 
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="http://benahm.github.io/jquery.throwable/javascripts/libs/jquery-1.9.0/jquery.min.js" type="text/javascript"></script> 
+    <script src="http://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js" type="text/javascript"></script>
+	<script src="filesaver.js"></script>
+	<meta data-react-helmet="true" charset="utf-8">
+	<meta data-react-helmet="true" property="og:title" content="ROM Corruptor Tool Online">
+	<meta data-react-helmet="true" property="og:description" content="A ROM corruptor makes better than Vinesauce ROM Corruptor.">
+	<meta data-react-helmet="true" name="description" content="A ROM corruptor makes better than Vinesauce ROM Corruptor.">
+</head>
+<style>
+::-webkit-scrollbar {
+    display: none;
+}
+
+body { background: silver; font-family: Tahoma, Helvetica, Roboto, sans-serif; text-align: center; }
+
+textarea { font-family: Tahoma, Helvetica, Roboto, sans-serif; background: white; outline: none; resize: none; color: black; box-shadow: 2px 2px 15px red, -2px 2px 15px lime, 2px -2px 15px yellow, -2px -2px 15px cyan;}
+textarea:hover { background: white; outline: none; resize: none; color: blue; }
+textarea:active { background: white; outline: none; resize: none; color: blue; }
+
+button { font-family: Tahoma, Helvetica, Roboto, sans-serif; padding: 10px 10px; border: 1px inset green; background: yellowgreen; color: white; box-shadow: 0px 2px 4px turquoise, 0px 4px 4px blue; outline: none;}
+button:active { padding: 10px 10px; border: 1px inset red; background: orangered; color: beige; box-shadow: 0px 2px 4px firebrick; outline: none;}
+button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; color: black; box-shadow: 0px 2px 4px greenyellow; outline: none;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<body>
+<h1 style="text-shadow: 4px 4px 2px grey;">ROM Corruptor</h1>
+<img src="template_grey.png" width="200" height="100">
+<br>
+<p>Enter the HEX code to insert.</p>
+<input type="text" maxlength="2" id="hexNumSet">
+<p>Enter the HEX code to replace.</p>
+<input type="text" maxlength="2" id="hexNumReplace">
+<br>
+<br>
+<br>
+	<textarea id="g" rows="30" cols="150" placeholder="Paste or write anything here." autofocus spellcheck="false"></textarea>
+	<br>
+	<br>
+    <span style="user-select:none; cursor: pointer;" onclick="document.getElementById('checkboxHex').click()" title="This checkbox that removes the special letters, if you turn it off, the special characters will not be removed."><input type="checkbox" checked id="checkboxHex"> Remove special letters</span>
+	<br><br>
+	<button onclick="corruptBytes()">Corrupt</button>
+	<button onclick="corruptBytesInp()">Corrupt from input</button>
+	<br>
+	<button onclick="showDownloadFormats()" id="downloadSet">Download</button>
+	<div id="downloadFormats" class="modal">
+		<div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Download formats:</p>
+	<p>Click this format if it supports the game format excepting with your emulator.</p>
+	<h6>Small Tip: Right-click on button for game console information.</h6>
+	<p>Also, please reminder the game must not be in HEX code, or else it will not work. You can download the text below.</p>
+	<button onclick="downloadhexGameTypeText()" oncontextmenu="alert('Text file is a plain text file that you can read the instruction or a test information if it needs.'); event.preventDefault();">Plain Text (.txt)</button>
+	<button onclick="downloadhexGameTypeGameboy()" oncontextmenu="alert('.gb - Gameboy cartridge format\nGame Boy is used to play the games with cartridges to achieve the levels and some consumption like receiving items, levels, and new powers.\nAlso, Game Boy uses its monochrome resolution, but five colors. Four colors are black and gray, one color is transparent, transmits to shadow from LCD. Turning on the handheld console will appear the Nintendo logo falling down to the screen. You will hear the sound of Nintendo without losing any pixels.\nGame Boy is most popular handheld game for poor gamers who use Game Boy frequently. But Game Boy can play Game Boy Color games, test it, if it works or not.'); event.preventDefault();">Gameboy (.gb)</button>
+	<button onclick="downloadhexGameTypeGameboyColor()" oncontextmenu="alert('.gbc - Gameboy Color cartridge format\nGame Boy Color is the most upgraded successor of original Game Boy. But Game Boy Color has upgraded their games of colors which it includes thousands of colors will apply with. Game Boy Color includes the white screen, dozens of colors add onto the screen. Also the backwards of Game Boy Color will play original Game Boy games as you need to, cartridges are two, original and colored formats of Game Boy.\nBut remember, original Game Boy games will lost the colors, but other colors will be replaced if cartridges support colors in upgraded Game Boy Color.'); event.preventDefault();">Gameboy Color (.gbc)</button>
+	<button onclick="downloadhexGameTypeGBA()" oncontextmenu="alert('.gba - Gameboy Advance cartridge format\nGameboy Advance is the most popular synthesized and ran it for cool processor in backwards from original Game Boy and Game Boy Color game systems. Game Boy Advance will now play the most 32 megabyte\'ed games all you want to stay up, battery that will be need. Batteries on Game Boy Advance are save files which you are not playing in for a week, save files can be lost if the battery is very low. Batteries on Game Boy Advance will lost esteem to zero, became an empty life. Replacing the batteries will loss your data, it\'s best way to play on emulator for infinite battery save and invulnerability of VBA-M and mGBA.\nGame Boy Advance are programmed with C++ to create Advance games on your handheld console.\nAlso, the special version of handheld console was a Game Boy Advance SP with better backlight to customize but it has a some new features on Game Boy Advance SP, the lid of Advance can be fenced up or down. Game Boy Advance SP does not have a lid sensor, instead turning off your console first.'); event.preventDefault();">Gameboy Advance (.gba)</button>
+	<button onclick="downloadhexGameTypeSNES()" oncontextmenu="alert('.smc - Super Nintendo cartridge format\nSuper Nintendo is a 16-bit Nintendo console for improved resolution than original NES.\nRemember, NES cannot be ran in SNES.\nSNES is used to play games, but within that includes audio tracking called SPC700, it\'s used to play the music or sounds. SPC700 is needed to hear in console\'s speaker. A SNES is used to play with successor of Game Boy Color games by purchasing an Game Boy ROM pak and insert the Game Boy Color cartridge. SNES on Game Boy Color will extend the screen, and the game will just play in SNES that it supports.'); event.preventDefault();">SNES (Variant 1) (.smc)</button>
+	<button onclick="downloadhexGameTypeMegadrive()" oncontextmenu="alert('.md - Sega Genesis (Megadrive) cartridge format\nSega Genesis is a 16-bit Sega console for improved resolution, unlike from SNES which it has a small resolution like from NES. Sega Genesis can play Sonic the Hedgehog if you like, which it\'s released in 1990s furthermore.\nSega Genesis includes the audio tracking called YM2612. But other sound chips like changed to YM2413 is Sega Master System backwards. Which includes the FM support of Yamaha chip that it stores its instruments in the game is allowed to play.\nSega Genesis improves the new format experience than Nintendo even do so.'); event.preventDefault();">Megadrive Genesis (.md)</button>
+	<button onclick="downloadhexGameTypeBin()" oncontextmenu="alert('.bin - Binary format\nA binary format includes the firmware or a game format which it can be played in some various of emulators that support .bin files. Sega Genesis supports .bin files to play unauthorized games if they made with language and made from binary and the hidden code. Firmwares in .bin files can be dumped if you use JTAG. JTAG uses BIN files to select the chip type to dump this. Dumping will be great if you dump the original games, firmware, or a BIOS chip whether you need to write this BIOS screen.'); event.preventDefault();">Binary (.bin)</button>
+	<button onclick="downloadhexGameTypeSMS()" oncontextmenu="alert('.sms - Sega Master System cartridge format\nSega Master System is a 8-bit Sega console that it never improved version, from the life of Sega Master System could to play SMS games within YM2413 sound chip is allowed to play. Sega Master System PSG noise was ugly.'); event.preventDefault();">Sega Master System (.sms)</button>
+	<button onclick="downloadhexGameTypeNES()" oncontextmenu="alert('.nes - Nintendo cartridge format\nNintendo Entertainment System is a 8-bit Nintendo console for classic gaming experience with 8-bit sound APU, or officially call as MMC5. Nintendo Entertainment System allows to play with many game cartridges than SNES. SNES is FM synthesized chip is SPC700. NES - MMC5. Nintendo Entertainment System does do a great job for the game experience, assembled with a code can be impossibly written.'); event.preventDefault();">NES (.nes)</button>
+	<button onclick="downloadhexGameTypeSNESAlt()" oncontextmenu="alert('.sfc - Super Nintendo cartridge format\nA SFC format is used for Super Nintendo game that it never supports .smc files. You can play on bSNES, SNES9x, or ZSNES. Dumping the cartridge will appear in different format, you can change the format name, but don\'t rename in real hardware is call .smc. Otherwise, it will not work on you and you need to fix this cartridge again.'); event.preventDefault();">SNES (Variant 2) (.sfc)</button>
+	<hr>
+	<p>If you don't know what file extension that you want to download, you can enter your own file extension format.</p>
+	<button onclick="downloadhexGameTypeCustom()" oncontextmenu="alert('A custom file extension name if you don\'t know what the file you want to choose, you will be greeted to enter the file extension name.'); event.preventDefault();">Custom (*.*)</button>
+		</div>
+	</div>
+	<p>A ROM corruptor makes better than Vinesauce ROM Corruptor. A ROM corruptor in this website which you can enter the HEX value (supported with 0123456789ABCDEF). And you click "Corrupt", it will replace the values, and you can download your corrupted ROM and run to your emulator.</p>
+	<h6>Small Tip: Select the center HEX code, to order corrupt it.</h6>
+<script>
+	function corruptBytes(){if(document.getElementById('checkboxHex').checked === true){ var xxx = document.getElementById('g').value;
+	xxx = xxx.replace(/[Math.random().toString(16).slice(-2)]+/g, Math.random().toString(16).slice(-2));
+	xxx = xxx.replace(/[^a-fA-F0-9]+/g, "");
+	document.getElementById('g').value = xxx}
+	else
+	{var xxx = document.getElementById('g').value;
+	xxx = xxx.replace(/[Math.random().toString(16).slice(-2)]+/g, Math.random().toString(16).slice(-2));
+	document.getElementById('g').value = xxx}}
+	
+	function corruptBytesInp(){if(document.getElementById('checkboxHex').checked === true){var xxx = document.getElementById('g').value;
+	xxx = xxx.replace(/[document.getElementById('hexNum').value]+/g, document.getElementById('hexNumReplace').value);
+	xxx = xxx.replace(/[^a-fA-F0-9]+/g, "");
+	document.getElementById('g').value = xxx}
+	else
+	{var xxx = document.getElementById('g').value;
+	xxx = xxx.replace(/[document.getElementById('hexNum').value]+/g, document.getElementById('hexNumReplace').value);
+	document.getElementById('g').value = xxx}}
+	function showDownloadFormats(){document.getElementById('downloadFormats').style.display = "block";}
+	function downloadhexGameTypeText(){saveTextAs(document.getElementById('g').value, "CorruptedROM_Text.txt")}
+	function downloadhexGameTypeGameboy(){saveTextAs(document.getElementById('g').value, "CorruptedROM_Gameboy.gb")}
+	function downloadhexGameTypeGameboyColor(){saveTextAs(document.getElementById('g').value, "CorruptedROM_GameboyColor.gbc")}
+	function downloadhexGameTypeGBA(){saveTextAs(document.getElementById('g').value, "CorruptedROM_GameboyAdvance.gba")}
+	function downloadhexGameTypeSNES(){saveTextAs(document.getElementById('g').value, "CorruptedROM_SuperNintendo_SMC.smc")}
+	function downloadhexGameTypeMegadrive(){saveTextAs(document.getElementById('g').value, "CorruptedROM.md")}
+	function downloadhexGameTypeBin(){saveTextAs(document.getElementById('g').value, "CorruptedROM_BinaryGame.bin")}
+	function downloadhexGameTypeSMS(){saveTextAs(document.getElementById('g').value, "CorruptedROM_SegaMasterSystem.sms")}
+	function downloadhexGameTypeNES(){saveTextAs(document.getElementById('g').value, "CorruptedROM_Nintendo.nes")}
+	function downloadhexGameTypeSNESAlt(){saveTextAs(document.getElementById('g').value, "CorruptedROM_SuperNintendo_SFC.sfc")}
+	function downloadhexGameTypeCustom(){var extensionName = prompt('Enter the file extension name.');saveTextAs(document.getElementById('g').value, Math.random().toString(36).slice(-9) + Math.random().toString(36).slice(-9) + "_CustomFile." + extensionName)}
+	setInterval(function(){document.title="ROM Corruptor"}, 1);
+	
+	// Get the modal
+var modal = document.getElementById("downloadFormats");
+
+// Get the button that opens the modal
+var btn = document.getElementById("downloadSet");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
