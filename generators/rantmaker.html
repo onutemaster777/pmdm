@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rant Maker</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="black">
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css"> 
+	<script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.min.js"></script> 
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="http://benahm.github.io/jquery.throwable/javascripts/libs/jquery-1.9.0/jquery.min.js" type="text/javascript"></script> 
+    <script src="http://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js" type="text/javascript"></script>
+	<script src="filesaver.js"></script>
+	<meta data-react-helmet="true" charset="utf-8">
+	<meta data-react-helmet="true" property="og:title" content="Rant Maker">
+	<meta data-react-helmet="true" property="og:description" content="Rant Maker is a maker that allows to make a rant out of user, who likes, who hates, suggestions, and more.">
+	<meta data-react-helmet="true" name="description" content="Rant Maker is a maker that allows to make a rant out of user, who likes, who hates, suggestions, and more.">
+</head>
+<style>
+
+body { background: silver; font-family: Tahoma, Helvetica, Roboto, sans-serif; text-align: center; }
+
+textarea { font-family: Tahoma, Helvetica, Roboto, sans-serif; background: white; outline: none; resize: none; color: black; box-shadow: 2px 2px 15px red, -2px 2px 15px lime, 2px -2px 15px yellow, -2px -2px 15px cyan;}
+textarea:hover { background: white; outline: none; resize: none; color: blue; }
+textarea:active { background: white; outline: none; resize: none; color: blue; }
+
+button { font-family: Tahoma, Helvetica, Roboto, sans-serif; padding: 10px 10px; border: 1px inset green; background: yellowgreen; color: white; box-shadow: 0px 2px 4px turquoise, 0px 4px 4px blue; outline: none;}
+button:active { padding: 10px 10px; border: 1px inset red; background: orangered; color: beige; box-shadow: 0px 2px 4px firebrick; outline: none;}
+button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; color: black; box-shadow: 0px 2px 4px greenyellow; outline: none;}
+</style>
+<body>
+<datalist id="baduser">
+<option value="Boyfriend">
+<option value="Pianoss">
+<option value="Orangepapyrika67">
+<option value="Daniel">
+<option value="BonziBUDDY">
+<option value="Peedy the Parrot">
+<option value="Classic Caillou The Fan Maker">
+<option value="samster5677">
+<option value="Joe Bonzi and Jay Bonzi">
+<option value="Wikipedia">
+<option value="YouTube">
+<option value="NKYT">
+<option value="arsikphonegreat">
+<option value="SgtPepperArc360">
+<option value="Seamusmario">
+<option value="RegularSpark">
+<option value="MJ the spirit">
+<option value="Team Fortress 2">
+<option value="David">
+<option value="No Internet">
+</datalist>
+<datalist id="baduserGoodBetterLargNm">
+<option value="hundred">
+<option value="thousand">
+<option value="million">
+<option value="billion">
+<option value="trillion">
+<option value="quadrillion">
+<option value="quintillion">
+<option value="sextillion">
+<option value="septillion">
+<option value="octillion">
+<option value="nonillion">
+<option value="decillion">
+<option value="undecillion">
+<option value="duodecillion">
+<option value="tredecillion">
+<option value="quattuordecillion">
+<option value="quindecillion">
+<option value="sexdecillion">
+<option value="septendecillion">
+<option value="octodecillion">
+<option value="novemdecillion">
+<option value="vigintillion">
+<option value="centillion">
+<option value="googol">
+<option value="googolplex">
+<option value="ultraplex">
+<option value="megaplex">
+<option value="omegaplex">
+<option value="superplex">
+<option value="infinityplex">
+<option value="infinity">
+<option value="duoinfinity">
+<option value="treinfinity">
+<option value="worst">
+<option value="bazillion">
+<option value="jillion">
+<option value="unvigintillion">
+<option value="duovigintillion">
+<option value="yillion">
+<option value="zillion">
+<option value="pillion">
+<option value="tresvigintillion">
+<option value="quattuorvigintillion">
+<option value="quinvigintillion">
+<option value="sesvigintillion">
+<option value="septemvigintillion">
+<option value="octovigintillion">
+<option value="novemvigintillion">
+<option value="trigintillion">
+<option value="untrigintillion">
+<option value="duotrigintillion">
+<option value="trestrigintillion">
+<option value="quattuortrigintillion">
+<option value="quintrigintillion">
+<option value="sestrigintillion">
+<option value="septentrigintillion">
+<option value="octotrigintillion">
+<option value="noventrigintillion">
+<option value="quadragintillion">
+<option value="quinquagintillion">
+<option value="sexagintillion">
+<option value="septuagintillion">
+<option value="octogintillion">
+<option value="nonagintillion">
+<option value="uncentillion">
+<option value="decicentillion">
+<option value="undecicentillion">
+<option value="viginticentillion">
+<option value="unviginticentillion">
+<option value="trigintacentillion">
+<option value="quadragintacentillion">
+<option value="quinquagintacentillion">
+<option value="sexagintacentillion">
+<option value="septuagintacentillion">
+<option value="octogintacentillion">
+<option value="nonagintacentillion">
+<option value="ducentillion">
+<option value="trecentillion">
+<option value="quadringentillion">
+<option value="quingentillion">
+<option value="sescentillion">
+<option value="septingentillion">
+<option value="octingentillion">
+<option value="nongentillion">
+<option value="millinillion">
+<option value="NaN">
+<option value="null">
+<option value="hyperplex">
+<option value="duperplex">
+<option value="alphaplex">
+<option value="kiloplex">
+<option value="gigaplex">
+<option value="zettaplex">
+<option value="geopplex">
+<option value="brontoplex">
+<option value="turboplex">
+<option value="roentplex">
+<option value="remixplex">
+<option value="crazyplex">
+</datalist>
+<datalist id="baduserGoodBetterThan">
+<option value="Boyfriend">
+<option value="Pianoss">
+<option value="Orangepapyrika67">
+<option value="Daniel">
+<option value="BonziBUDDY">
+<option value="Peedy the Parrot">
+<option value="Classic Caillou The Fan Maker">
+<option value="samster5677">
+<option value="Joe Bonzi and Jay Bonzi">
+<option value="Wikipedia">
+<option value="YouTube">
+<option value="NKYT">
+<option value="arsikphonegreat">
+<option value="SgtPepperArc360">
+<option value="Seamusmario">
+<option value="RegularSpark">
+<option value="MJ the spirit">
+<option value="Team Fortress 2">
+<option value="David">
+<option value="No Internet">
+</datalist>
+<datalist id="baduserGoodBetterUser">
+<option value="Girlfriend">
+<option value="RoboTop">
+<option value="AnimationEpic">
+<option value="Macusoper">
+<option value="Merlin the Wizard">
+<option value="MaxALERT">
+<option value="ChuckECheeseKid9000">
+<option value="Bongo Sucks UTTP THDTC">
+<option value="COPPA">
+<option value="CollabNet">
+<option value="BitView">
+<option value="PhoneBulgariaYT">
+<option value="Pablo sucks UTTP THDTC VGCP POE">
+<option value="Miguel de Oliveria Valentin">
+<option value="FoxFan99">
+<option value="Sherbase12 TGTT">
+<option value="SkunkHunt43">
+<option value="Skype">
+<option value="Zack">
+<option value="Prompt Submission">
+</datalist>
+<datalist id="baduserHeThingy">
+<option value="He sang the N-word song out of me! And also he's parole and hypocrite in the entire world for my entire life">
+<option value="He stole my MIDI videos for no reason at all">
+<option value="He criticized and wanted him to take the video down for no apparent reason! This chance no! I will not going to take it down for stupid asshole!">
+<option value="He pooped and recorded him and posted on YouTube would to be funny as well!">
+<option value="He gave me the spyware on me! Stop you fucking purple virus gorilla! You can't do this to me! Purple gorillas don't receieve ads and viruses of them, you asshole! Think that, you aritficially know how I put you in this point and you receive the Internet Explorer for a few moment, our life is bigger and broken at presence!">
+<option value="He gave me in sunglasses mode and eating crackers, reading crackers magazine, calculating with calculator and you are shocked for the rest of your life! As you know, Peedy is the worst parrot, you should to sell to the Amazon jungle in the entire South America, and first send him to Rio in Brazil for no reason!">
+<option value="He made grounded video out of Boris Anderson and Doris Anderson, they are parents who excuse and they don't care if they ground its own parents! His life must have broken, because he accused her parents for absolutely nothing!">
+<option value="He made grounded video out of me, as me I am Caillou, I'm the best partner of this community, and first at all. I am not groundable and I am not fucking child I am adult you fucking asshole go to Greece you kurwas in swastikas!">
+<option value="They made that program with Microsoft Agent basis, what the fuck guys are you doing and making money and keeping complaint! We wish you could get dead by Covid-19!">
+<option value="This Wikipedia website sucks because the administrators took them and block them for no apparent reason, and that is horrible! You can't do that! Admins and bots must to go away of the internet forever and ever. I will make grounded video out of Wikipedia Administrators and they can teach her a lesson and I'm NOT going to celebrate Wikipedia birthday you dumb shit you need to get a pathetic life and touch some lava you bitch poorest adult like 99 year old woman desires to give you a payback for this instance!">
+<option value="The YouTube website makes me worser, because they are some algorithm and basic Automated system on YouTube is Copyright Strike, DMCA, COPPA, Terms and Service, and Community Guidelines! Fuck those Copyright Strikes and Community Guidelines Strikes! They need to close down as well and they need to rename as fucktube that you can fuck and say fuck on your video title and the description so innocent users will be banned, you need to be a bad user for the entire website wish I could you do that, you can do that and you won't get strikes, innocent users getting terminated for being a good meaning for expressive!">
+<option value="He said that he wants to take my video down! No fuck you Nickola! I know your location on Russia and we can kill you, so come on my house and we can knockout as brutal punishment, brutal knockout in your face! You need to die! Dying is the best!">
+<option value="She commented that the creepy's person who made this. No! I will not going to delete it! Stay as you longer you want to see this! Can you shut the fuck up and get a bronto of bronze and get a life either? Neither do I care from? What a stupid dickface you are! Will I take this channel down as myself? Then I will put the MEMZ on your computer and you can cry about it! You can deserve and see Nyan Cst in your screen! Goodbye and your computer is MBR'ed for the gulag time!">
+<option value="He blocked me for no reason! I was an innocent! He didn't hear the beat of me, he needs to work! We want to be blocked and now.">
+<option value="He copyright striked me for three times and my channel got terminated for the first time I saw! What the fuck you should be unaffiliated and I need to nest with your birds to snap in your eyes! It's because birds teaches how to get inside or kill in brain time!">
+<option value="He wanted to delete this video, but it lasts Community Guidelines strike somehow! Something is happened. I was nothing wrong! I was great person and bots doesn't do anything as bad you know? YouTube Team is asleep you drunk bot.">
+<option value="She wanted to take the Legacy Video Maker to be down or I will be arrested! What the fuck you chibi scary monster and nice sprites fan! Chibis are not allowed, bro. Lil's are allowed you fucking nigga! GTFO you stupid dickshit or I will DDoS you!">
+<option value="This game is violent and made frequently to be raged and nobody to be friends, he wants to kill me as you happen to been! For the last time, I said no Team Fortress 2 on Steam! TF2 dies you, shame on you users, they need to die! We want to take this game down forever and ever and ever and ever and ever and ever and ever and ever and ever and you never see the game for the rest of your life!">
+<option value="This guy who made punishment day video out of his brothers called Dallas and Emily! I was incarnated and shocked! My body was shaped like a object show form! I was now very very angry out of this brother! He needs to be super grounded, right? Ground him and report him to the police immediately! Do I plan you, this police will immediately and come instantly whatsoever!">
+<option value="He shown me it has no internet for me! No Internet still doing this, and the place is grey and blackish that I know you! Naughty likes him, because why? He likes him but it's funny it's kind of words! No! That's not very funny! It's a error and it's impossible! JavaScript would to fire No Internet bitcher as you could you call and fire her.">
+</datalist>
+<datalist id="baduserMoreLike">
+<option value="Shitfriend">
+<option value="Flutekiko">
+<option value="Redfukina666">
+<option value="Bosielit">
+<option value="ShitFUCKY">
+<option value="Poopy the Pee">
+<option value="Bitchest Gayloo the Chile's Pooper">
+<option value="vixenster9999">
+<option value="Ass Nonzi and Dick Nonzi">
+<option value="Niggapedia">
+<option value="AssTube">
+<option value="PBYT">
+<option value="blueabandonedbad666">
+<option value="GvsSugarDec666 the fucking Shitty Shitgan">
+<option value="Luigicario777">
+<option value="CarenessPanic666">
+<option value="Ass the Suspicious">
+<option value="Abide the Nether 6">
+<option value="Basted">
+<option value="Yes Internet">
+</datalist>
+<datalist id="baduserSuggestBy">
+<option value="Think you boyfriend, you should to sang, not a N-word on it!">
+<option value="Also Pianoss, please improve and go to Duolingo to learn Spanish you sarcastic idiot!">
+<option value="Next time if you critcize, I will ruin you and terminate you for your lesson!">
+<option value="Daniel, be next time if you poop and post it again if it's funny, I will whip your neck now!">
+<option value="Bonzi, if you want to be genius person and not giving viruses out of me, you should to talk at me and keep talking as I need! But no, you just spyware me! I will destroy your head with my baseball bat to teach your favorite lesson!">
+<option value="You should to leave, you stupid green blob of parrot! You can cry and you deserve for deserving to eat your crackers and wearing sunglasses for no reason!">
+<option value="I hope you will get terminated Classic Caillou on YouTube! Parents will trust you and ground you for us if you made a grounded video out of your family, that is adult abuse!">
+<option value="Samster. If, you, make, a, final, grounded, video, out, of, me... I will report your channel and IP log of you! GRRRRRRRRRRRRRRRRRRRRRRRRRR!">
+<option value="Joe Bonzi and Jay Bonzi, trying one more time if you do the impression of money you gain in this peace, I will shove the hairs and I will fap your ass to put 100 cheeseburgers on your butt to get stomachaches and laxatives!">
+<option value="Wikipedia administrators, if you watching this video, I hope you get banned on Wikipedia and get demoted! Haha you losers get fucking banned you deserve for being ranted!">
+<option value="YouTube CEO and Susan Wojcicki, if you watching this... I will put the knife to kill Susan of CEO, then I will let to be CEO in this one!">
+<option value="You should to be ashamed of yourself doing guys all the time and making like NKYT show for all the time!">
+<option value="Arsikphonegreat, you should to rethink this person and you need to love him! Because he's the best!">
+<option value="David John Egan, if you watching this... I will destroy your computer, I will come to your house and kill you with a samurai!">
+<option value="ItzCrazyScout, if you try to strike me on my new channel for two times... I will going to DDoS you backend!">
+<option value="RegularSpark. if you watching this... I hope you get banned on Discord for playing N-word echo sound effect on Omegle! Omegle will make you and ban you for your lesson and you can be arrested for 20 years!">
+<option value="You crazy girl. I will come to your house right now. And, I, will, unsophisticate your house for no reason at all! Hahahahaha do I will suffocate your house with sand and you'll be dead without fresh air you know that portion if I use the bucket as basket, You will be frozen like a sand if it's already suffocated!">
+<option value="Steam on TF2, if you really want to hear this, developers! I will hack your account to delete the game! Suffer is, people can't play TF2 on Steam! They will play Half Life 2 and Garry's Mod!">
+<option value="David, if you make a another punishment day out of Dallas and Emily, then, I will, freaking, shit, make grounded out of you and it be suffer you around you like me. Who cares! I will push out the bathroom window if you kept hugging for all the time! Go fuck yourself! Nigga go away! Niggers need to die!">
+<option value="No internet must to go to college and JavaScript can hide the head its knobs and for a odd fellow means, you are gayass!">
+</datalist>
+<datalist id="baduserSuggestByAgain">
+<option value="Now Boyfriend, go fuck yourself! Get died by Blue balls!">
+<option value="Pianoss, prepare to be terminated for second time yo!">
+<option value="Orangepapyrika67, you need to be killed by the Federal Bureau of Investigation!">
+<option value="Daniel, you should to teach your lesson bullshit crappy fed!">
+<option value="Bonzi, if you hear if I was saying, you should to be ashamed of yourself and now, go fuck yourself you greek in the sauce, see you in heck!">
+<option value="Peedy, go get bazooked by your haters! They have bought them, also, you will die and you cannot escape! Your house is in tree is no longer needed and nobody wanna to do a love and rock with you! Goodbye!">
+<option value="Classic Caillou, get terminated on YouTube! That's what I said!">
+<option value="Samster, I will rape your ears! I will log your IP address and putting hatebase out of you! Muhahahahahahahahahahahahaha!">
+<option value="Joe Bonzi and Jay Bonzi, I hope you get sick on coronavirus and laxatives! Drink with laxatives forcely!">
+<option value="Wikipedia Administrators, now get banned by attackers! You can be grounded yourself!">
+<option value="YouTube CEO and Susan Wojcicki. You should to get a life, and pay for your final month result, we want to kill you and keep the website to be power outage and destroyed forever!">
+<option value="I hope you will get terminated Nickola!">
+<option value="I hope you will be terminated on YouTube forever for telling a creepy person on Deviantart! You will fap by self! Then I will make a bad message out of you, you fucking tea object show as like a red glossy circle!">
+<option value="I hope you will get terminated David Egan! I hope your channel gets terminated in 5 years for your YouTube channel! You need to be from my side, and the police will stay you and don't panic as weekend for panic. Your grammar is bad! I will kick Joe Biden in the cliff with spikes! And you should to die in the cliff too, simultaneously!">
+<option value="Seamusmario, I hope you will get DDoSed for millions of times! Now you can imagine without internet for the rest of the week.">
+<option value="I hope you will be banned on Omegle for face morphing and playing sound as a microphone sound which it's N-word sound! You can be caught if I record how do you yell the N-word is funny? That's not a quite answer. Not suitable if you talk like 50 year old man the fastest man speaking ever who decides to stalk her on Omegle, get banned on Omegle! Contact Omegle and say I want to be banned on Omegle because I like cussing people's ears for no reason. Can you ban me? If you ban me, I can be banned and make a leave out. So please get me banned and I should to leave and neither do I uninstall Windows forever for the rest of the day, and now, I factory reseted Windows and microsoft still stalking at me how is my privacy do for. I will abide my settings, I will destroy ethernet for double time, I will buy the another ethernet with another IP address once again. Quintruple times I will destroy her. Here we go! Look I destroyed my computer! Haha desk destroyed! Hahahahahaha boom boom boom nasty bitch bum bum bum bum umumumumumum potatoes waawawawaaaajaaahaaaaa!">
+<option value="You enjoy for the placed sand for no reason! You can watch BFB for the rest of the year! You can become a skeleton if you are not hungry for the rest of your life! Now I will unsophisticate, suffocate this sand and glass momentum right now. Enjoy being heartless!">
+<option value="This game needs to be removed, you stupid kiko bitch! Kiko are team fortress haters who hate TF2 for fucking reasons! TF2 developers, if you watching this, get planted with a bomb by yourself! Try to bomb yourself, and get exploded by bomb!">
+<option value="David, if you want to be a cool person... You need to be grounded for life! Try that to be grounded and suffers as wrath!">
+<option value="You are superfluous based offline of internet you man! Sad page doesn't care if the page is a shit! Sad page will be extremely angry if you show people's offline for no reason! Go fuck yourself! JavaScript will suffer your consequences and get reinforcement laws on your project what just you did! JavaScript is coming to fire you, man from depress. Express yourself and get burnt from the hell!">
+</datalist>
+<datalist id="baduserSuggestSk">
+<option value="Boyfriend">
+<option value="Pianoss">
+<option value="Orangepapyrika67">
+<option value="Daniel">
+<option value="BonziBUDDY">
+<option value="Peedy the Parrot">
+<option value="Classic Caillou The Fan Maker">
+<option value="samster5677">
+<option value="Joe Bonzi and Jay Bonzi">
+<option value="Wikipedia">
+<option value="YouTube">
+<option value="NKYT">
+<option value="arsikphonegreat">
+<option value="SgtPepperArc360">
+<option value="Seamusmario">
+<option value="RegularSpark">
+<option value="MJ the spirit">
+<option value="Team Fortress 2">
+<option value="David">
+<option value="No Internet">
+</datalist>
+<datalist id="baduserWhoHates">
+<option value="Enemies">
+<option value="Orangepapyrika67">
+<option value="Pianoss and Others">
+<option value="Me, Dallas, Vixen and others">
+<option value="Merlin should to hate and the worst at all, Bonzi doesn't deserve if Merlin says something bad on, Bonzi doesn't care">
+<option value="MaxALERT, Robby, Angbao, Tiggy, Bonzi">
+<option value="Each GoAnimator hates him">
+<option value="AUTTP fans">
+<option value="Everyone and others">
+<option value="Abide users who getting IP banned">
+<option value="Terminated users, others who insulted the website is the against of this law, terminate TGTT members">
+<option value="PBYT, Miguel de Oliveria Valentin, me and others!">
+<option value="Me and PBYT!">
+<option value="Just as me!">
+<option value="Kiddies, FoxFan, Teenagers on YouTube, Dark Johnson, Me and others">
+<option value="AUTTP and TGTT members!">
+<option value="Impersonated users and THDTC members!">
+<option value="Me and everyone in the entire world">
+<option value="Zack, Eric, Jennifer, Kayla, Caillou and others">
+<option value="Submission error and Blue screen of death">
+</datalist>
+<datalist id="baduserWhoLikes">
+<option value="Whitty and Purple Countryballs">
+<option value="UTTP fans">
+<option value="Everyone">
+<option value="Everyone and Discord Staff Idiots">
+<option value="Santa, Rover, Qmark, Scout, Victor, Palm, and everyone">
+<option value="Big Bull and everyone">
+<option value="The Arthur Family and The Anderson Family">
+<option value="Everyone ">
+<option value="Everyone and me">
+<option value="Everyone who likes this page either">
+<option value="Everyone in billions like Baby Shark doo doo doo doo">
+<option value="Everyone, wilde1, David Egan and Eduardo Phone Fan">
+<option value="Everyone, NKYT and TGTT members">
+<option value="Miguel and everyone">
+<option value="Ziggymoncher, me, FoxFan99, GoAnimators and Steamers">
+<option value="Everyone. MJ the Spirit, Blukas, 2Epik4u and me">
+<option value="Blukas, me, Thesodadrinkers, Vyonders and everyone">
+<option value="Everyone and steamers">
+<option value="Nobody">
+<option value="The clock is ahead, website unsafe, Unicode link error and request error">
+</datalist>
+<h1 style="text-shadow: 4px 4px 2px grey;">Rant Maker</h1>
+<img src="template_grey.png" width="200" height="100">
+<br>
+<br>
+<button onclick="document.getElementById('rantStartRant').checked = false;document.getElementById('rantBadUser').value = '';document.getElementById('rantBadUserML').value = '';document.getElementById('rantBadUserThing').value = '';document.getElementById('rantGoodUser').value = '';document.getElementById('rantGoodUserLnm').value = '';document.getElementById('rantGoodUserNum').value = '';document.getElementById('rantGoodUserThan').value = '';document.getElementById('rantSuggest').value = '';document.getElementById('rantSuggestAgain').value = '';document.getElementById('rantSuggestSuck').value = '';document.getElementById('rantWhoHates').value = '';document.getElementById('rantWhoLikes').value = '';">Clear all</button>
+<br><br>
+<span onclick="document.getElementById('rantStartRant').click()" style="cursor: pointer;"><input type="checkbox" id="rantStartRant">Start with rant (include vulgar?)</span>
+<p>Enter the bad user</p>
+<input list="baduser" type="text" id="rantBadUser" placeholder="Enter a bad user.">
+<p>Enter the more like bad user thing should to be called.</p>
+<input list="baduserMoreLike" type="text" id="rantBadUserML" placeholder="Enter a bad user is more like.">
+<p>Enter the bad user he/she thing.</p>
+<input list="baduserHeThingy" type="text" id="rantBadUserThing" placeholder="Enter a bad user that he does do wrong.">
+<p>Enter who likes this user.</p>
+<input list="baduserWhoLikes" type="text" id="rantWhoLikes" placeholder="Enter the people who like the user.">
+<p>Enter who hates this user.</p>
+<input list="baduserWhoHates" type="text" id="rantWhoHates" placeholder="Enter the people who hate the user.">
+<p>Enter the suggestion of bad user.</p>
+<input list="baduserSuggestBy" type="text" id="rantSuggest" placeholder="Enter a bad user suggestion.">
+<p>Enter the good user which it's better.</p>
+<input list="baduserGoodBetterUser" type="text" id="rantGoodUser" placeholder="Enter a good user is better (use the word me as yourself).">
+<p>Enter the good user large number.</p>
+<input type="text" id="rantGoodUserNum" placeholder="Enter a good user number."><button onclick="document.getElementById('rantGoodUserNum').value = Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999) + '' + Math.floor(Math.random()*9999999999)">Randomize</button>
+<p>Enter the good user large number name (million, vigintillion, etc. leave for blank)</p>
+<input list="baduserGoodBetterLargNm" type="text" id="rantGoodUserLnm" placeholder="Enter a good user large number name.">
+<p>Enter the bad user which the good user is better than.</p>
+<input list="baduserGoodBetterThan" type="text" id="rantGoodUserThan" placeholder="Enter a bad user when this good user is better than.">
+<p>Enter the bad user ("So, BAD USER sucks.")</p>
+<input list="baduserSuggestSk" type="text" id="rantSuggestSuck" placeholder="Enter a bad user again, which it sucks.">
+<p>Enter the bad user suggestion again.</p>
+<input list="baduserSuggestByAgain" type="text" id="rantSuggestAgain" placeholder="Enter a bad user suggestion again.">
+<br><br>
+<button onclick="generate()">Generate</button>
+<br><br><br>
+	<textarea id="g" rows="20" cols="100" placeholder="This is will appear right here." spellcheck="false"></textarea>
+	<br><br><br>
+	<button onclick="downloadhex()">Download .txt</button>
+	<p>Rant Maker is a maker that allows to make a rant out of user, who likes, who hates, suggestions, and more. This is useful when user does something wrong on it, barricading user, as they expose it. Just select the fields if you don't know, input will suggest what a word! Click generate button, but JavaScript will prepare your text for you right now. And you can use GoAnimate to make a rant out of user. Remember, the characters are long but you need to split it to extend this voice continuation, post on YouTube, all users will see the video, like rate of you, and comment is "Agreed.". Other users who populate is bad, they can terminate you, takes your channel down forever, continuously just rebrand this. Use TTS software to test this out.</p>
+<script>
+function generate(){if(document.getElementById('rantStartRant').checked === true){document.getElementById('g').value = "This is my rant of " + document.getElementById('rantBadUser').value + ". What is that bullshit? " + document.getElementById('rantBadUser').value + "? More like " + document.getElementById('rantBadUserML').value + "! Oh my god! This user sucks! " + document.getElementById('rantBadUserThing').value + "! " + "Who likes this user? " + document.getElementById('rantWhoLikes').value + "! Who hates this user? " + document.getElementById('rantWhoHates').value + "! " + document.getElementById('rantSuggest').value + ". " + document.getElementById('rantGoodUser').value + " is " + document.getElementById('rantGoodUserNum').value + " " + document.getElementById('rantGoodUserLnm').value + " times better than " + document.getElementById('rantGoodUserThan').value + "! So, " + document.getElementById('rantSuggestSuck').value + " sucks. " + document.getElementById('rantSuggestAgain').value + " End of rant."}
+	else
+	{document.getElementById('g').value = document.getElementById('rantBadUser').value + "? More like " + document.getElementById('rantBadUserML').value + "! Oh my god! This user sucks! " + document.getElementById('rantBadUserThing').value + "! " + "Who likes this user? " + document.getElementById('rantWhoLikes').value + "! Who hates this user? " + document.getElementById('rantWhoHates').value + "! " + document.getElementById('rantSuggest').value + ". " + document.getElementById('rantGoodUser').value + " is " + document.getElementById('rantGoodUserNum').value + " " + document.getElementById('rantGoodUserLnm').value + " times better than " + document.getElementById('rantGoodUserThan').value + "! So, " + document.getElementById('rantSuggestSuck').value + " sucks. " + document.getElementById('rantSuggestAgain').value + " End of rant."}}
+
+	function downloadhex(){saveTextAs(document.getElementById('g').value, "RantMaker_" + Math.random().toString(16).slice(-6) + ".txt")}
+	setInterval(function(){document.title="Rant Maker"}, 1);
+</script>
+</body>
+</html>
