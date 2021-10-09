@@ -1,3 +1,32 @@
-Good luck adding this
+<!DOCTYPE html>
+<html>
+<head>
+<title>sgtelement.js - Playground</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="description" content="sgtelement.js - Playground stage - playing with script sgtelement.js" />
+</head>
+<style>
+body { text-align: center; font-family: "Arial Narrow", Eurostile, Arial, sans-serif; background: white; color: black; }
+.textscr { background-image: radial-gradient(green, aquamarine, green); color: white; transition: 0.5s; outline: none; }
+.textscr:hover { background-image: radial-gradient(green, lime, green); color: white; outline: none; }
+.bigbutton { padding: 20px 30px; color: yellow; font-size: 12px; background-image: linear-gradient(red, orangered); border: 1px groove grey; border-top-right-radius: 20px; border-top-left-radius: 10px; outline: none; transition: 0.2s; }
+.bigbutton:hover { padding: 20px 30px; color: orange; font-size: 20px; background-image: linear-gradient(red, orangered); border: 1px groove yellow; border-top-right-radius: 20px; border-top-left-radius: 10px; outline: none; }
+.bigbutton:active { padding: 20px 30px; color: pink; font-size: 8px; background-image: linear-gradient(red, orangered); border: 1px groove green; border-top-right-radius: 20px; border-top-left-radius: 10px; outline: none; }
+</style>
+<body>
+<h1>
+<br><br>
+<p style="font-size: 30px;" id="test">TEST</p><p style="font-size: 30px;" id="test2">TEST</p><p style="font-size: 30px;" id="test3">TEST</p><p style="font-size: 30px;" id="test4">TEST</p>
+<span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span>
+<span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span>
+<span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span>
+<span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span><span style="font-size: 30px;" id="span1">TEST</span>
+<img src="flame.jpg">
+<button onclick="Destruction()">Destroy the page!</button>
 <p id="red">roses are red</p>
-<button onclick="var dd = document.getElementById('red');dd.insertAdjacentHTML('beforeend','<p id=\'red\'>roses are not red</p>')">add new rose quote</button>
+<button onclick="var dd = document.getElementById('red');dd.insertAdjacentHTML('beforeend','<p id=\'red\'>roses are not red</p>')">Add new rose quote</button>
+<script src="sgtelement.js" type="text/javascript"></script>
+<script src="sgtelement_destruct.js" type="text/javascript"></script>
+</body>
+</html>
