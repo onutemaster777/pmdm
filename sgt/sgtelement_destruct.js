@@ -68,7 +68,7 @@ function Destruction(){
 	else
 	if(eee==="10"){
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.cursor = "url(https://onutemaster777.github.io/pmdm/sgt/move.png), auto"}
-		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/move.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "5s"; el.style.left = Math.floor(Math.random()*1001) + "cm"; el.style.perspective = Math.floor(Math.random()*1001) + "px"; el.style.transform = "scale(" + Math.floor(Math.random()*10) + ", " + Math.floor(Math.random()*10) + ")"; el.style.top = "" + Math.floor(Math.random()*1001) + "cm"; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/move.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "5s"; el.style.position = "fixed"; el.style.left = Math.floor(Math.random()*1001) + "cm"; el.style.perspective = Math.floor(Math.random()*1001) + "px"; el.style.transform = "scale(" + Math.floor(Math.random()*10) + ", " + Math.floor(Math.random()*10) + ")"; el.style.top = "" + Math.floor(Math.random()*1001) + "cm"; rfs.call(el);});
 	}
 }
 // end of script
