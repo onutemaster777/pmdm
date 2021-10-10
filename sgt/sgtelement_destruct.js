@@ -12,7 +12,7 @@ function Destruction(){
 	var eee = prompt('1. Explode\n2. Simple Remove\n3. Rotate\n4. Stone\n5. Minecraft\n6. Freeze & Destroy\n7. Magic Wand\n8. Ban Hammer\n9. Fire\n10. Push')
 	if(eee==="1"){
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.cursor = "url(https://onutemaster777.github.io/pmdm/sgt/bomb.png), auto"}
-		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/explode.mp3');aud.play(); var el = ev.target, rfs = el.style.transform = "scale(" + Math.floor(Math.random()*9) + ")"; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/explode.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "2s"; el.style.transform = "scale(" + Math.floor(Math.random()*9) + ")"; rfs.call(el);});
 	}
 	else
 	if(eee==="2"){
