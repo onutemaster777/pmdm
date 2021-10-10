@@ -12,7 +12,7 @@ function Destruction(){
 	var eee = prompt('1. Explode\n2. Simple Remove\n3. Rotate\n4. Stone\n5. Minecraft\n6. Freeze & Destroy\n7. Magic Wand\n8. Ban Hammer\n9. Fire\n10. Push')
 	if(eee==="1"){
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.cursor = "url(https://onutemaster777.github.io/pmdm/sgt/bomb.png), auto"}
-		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/explode.mp3');aud.play(); var el = ev.target, rfs = el.style.transform = "scale(3)"; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/explode.mp3');aud.play(); var el = ev.target, rfs = el.style.transform = "scale(" + Math.floor(Math.random()*9) + ")"; rfs.call(el);});
 	}
 	else
 	if(eee==="2"){
@@ -31,11 +31,13 @@ function Destruction(){
 	}
 	else
 	if(eee==="5"){
+		var score = 0;
+		document.title = "Score: " + score;
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.cursor = "url(https://onutemaster777.github.io/pmdm/sgt/mc.png), auto"}
 		var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/mysterious.mp3');aud.play();
 		setInterval(function(){var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/mysterious.mp3');aud.play();}, 21000)
 		var eeeaa = Math.floor(Math.random()*9);
-		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/dig.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "1s"; el.style.transform = "rotate(" + Math.random()*30 + "deg)"; eeeaa = Math.floor(Math.random()*9); if(eeeaa===2){el.style.transition = "1s"; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/break.mp3');aud.play(); el.style.transform = "scaleY(0.2)";setTimeout(function(){el.remove()}, 1000)}; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; for (let i = 0; i < Math.floor(Math.random()*4); i++) {score++}; document.title = "Score: " + score; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/dig.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "1s"; el.style.transform = "rotate(" + Math.random()*360 + "deg)"; eeeaa = Math.floor(Math.random()*9); if(eeeaa===2){el.style.transition = "1s"; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/break.mp3');aud.play(); el.style.transform = "scaleY(0." + Math.floor(Math.random()*10) + ")";for (let i = 0; i < Math.floor(Math.random()*400); i++) {score++};document.title = "Score: " + score;setTimeout(function(){document.title = "Victory!";el.remove()}, 1000)}; rfs.call(el);});
 	}
 	else
 	if(eee==="6"){
@@ -66,7 +68,7 @@ function Destruction(){
 	else
 	if(eee==="10"){
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.cursor = "url(https://onutemaster777.github.io/pmdm/sgt/move.png), auto"}
-		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/move.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "5s"; el.style.left = Math.floor(Math.random()*1001) + "cm"; el.style.perspective = Math.floor(Math.random()*1001) + "px"; el.style.transform = "scale(" + Math.floor(Math.random()*10) + ", " + Math.floor(Math.random()*10) + ")"; el.style.top = "" + Math.floor(Math.random()*1001) + "cm"; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/move.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "5s"; el.style.left = Math.floor(Math.random()*1001) + "cm"; el.style.perspective = Math.floor(Math.random()*1001) + "px"; el.style.transform = "scale(" + Math.floor(Math.random()*10) + ", " + Math.floor(Math.random()*10) + ")"; el.style.top = "" + Math.floor(Math.random()*1001) + "cm"; rfs.call(el);});
 	}
 }
 // end of script
