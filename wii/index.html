@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Channel</title>
+<meta data-react-helmet="true" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta data-react-helmet="true" property="og:title" content="Internet Channel">
+<meta data-react-helmet="true" property="og:description" content="Start the Wii Internet Channel and start browsing!">
+<meta data-react-helmet="true" name="description" content="Start the Wii Internet Channel and start browsing!">
+</head>
+<style>
+body { background: black; text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
+#borderwii { background-image: linear-gradient(to bottom, white, lightblue); border-radius: 20%; max-width: 800px; max-height: 600px; margin: 0 auto; padding-top: 600px; padding-right: 800px; z-index: 999; }
+.wiibutton { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 30px; outline-color: cyan; outline: none; transition: 0.1s; wrap }
+.wiibutton:hover { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 30px; outline-color: cyan; outline: none; filter: brightness(1.1); }
+.wiibutton:active { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 28px; outline-color: cyan; outline: none; filter: brightness(0.9); }
+@media (max-width: 800px) {
+		#borderwii { background: white; border-radius: 20%; max-width: 800px; max-height: 600px; margin: 0 auto; padding-top: 600px; padding-right: 200px; z-index: 999; }
+}
+#lines { border-top: 5px solid grey;}
+.under { background: silver; width: 100%; margin: 0 auto; text-align: center; position: absolute; bottom: -70px; }
+#animation { width: 100%; margin: 0 auto; text-align: center; position: absolute; bottom: 250px; font-size: 40px; }
+.breakwiib { padding: 60px; }
+</style>
+<body>
+<div id="borderwii">
+<div id="animation">
+<p style="color: blue;">Internet Channel</p>
+<br>
+<span style="color: royalblue; font-size: 50px;font-weight: bolder;" id="i_i">i</span><span style="color: royalblue; font-size: 50px;font-weight: bolder;">nternet</span>
+</div>
+<div class="under">
+<hr id="lines">
+<span id="home"><button class="wiibutton" onclick="history.go(-1)">Wii Menu</button></span>
+<span class="breakwiib"/>
+<span id="start"><button class="wiibutton" onclick="window.location.assign('internet.html')">Start</button></span>
+</div>
+</div>
+<button id="wiinow" hidden onclick="var e = new Audio('InternetChannel-FullVersionSound.ogg');e.play()"></button>
+<script>
+setTimeout(function(){
+var w = document.getElementById('wiinow')
+w.click()
+}, 1000)
+var k = 0; var ea = setInterval(function(){document.getElementById('i_i').style.color = "#4" + k;k++}, 1); setTimeout(function(){clearInterval(ea);document.getElementById('i_i').style.color = "royalblue";}, 6000);
+</script>
+</body>
+</html>
