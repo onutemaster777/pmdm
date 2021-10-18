@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wii Word</title>
+<meta data-react-helmet="true" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta data-react-helmet="true" property="og:title" content="Word Tester">
+<meta data-react-helmet="true" property="og:description" content="Write something with Wii On-screen keyboard!">
+<meta data-react-helmet="true" name="description" content="Write something with Wii On-screen keyboard!">
+</head>
+<style>
+body { background: silver; text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
+#wiiopera { text-align: left; margin: 1cm; }
+.orb { background-image: radial-gradient(turquoise, royalblue); outline: none; border-radius: 50%; border: 2px solid cornflowerblue; }
+.orbinner { background: silver; text-align: left; position: relative; }
+#searchKey { background: #fff9ff; text-align: center; }
+#searchKB { background: white; color: royalblue; border: 4px groove cornflowerblue; outline-color: blue; border-radius: 5px;}
+#searchKB::placeholder { color: blue; }
+#startpage { font-size: 30px; font-weight: bold;}
+#operaifm { border: none; text-align: center; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+.wiibutton { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 30px; outline-color: cyan; outline: none; transition: 0.1s; }
+.wiibutton:hover { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 30px; outline-color: cyan; outline: none; filter: brightness(1.1); }
+.wiibutton:active { background-image: linear-gradient(to bottom right, white, silver); border: 3px solid cornflowerblue; padding: 10px 40px; border-radius: 25px; display: inline; font-size: 28px; outline-color: cyan; outline: none; filter: brightness(0.9); }
+.wiiky { background: radial-gradient(ellipse at top, white, transparent), radial-gradient(ellipse at left, grey, transparent), radial-gradient(ellipse at right, silver, transparent); color: black; font-size: 20px; border: 2px groove silver; outline: none; border-radius: 5px; padding: 10px 25px; transition: 0.05s; }
+.wiiky:hover { background: radial-gradient(ellipse at top, pink, transparent), radial-gradient(ellipse at left, purple, transparent), radial-gradient(ellipse at right, hotpink, transparent); color: black; font-size: 20px; border: 2px groove silver; outline: none; border-radius: 5px; padding: 10px 25px; transform: scale(1.2); }
+.wiiky:active { background: radial-gradient(ellipse at top, pink, transparent), radial-gradient(ellipse at left, purple, transparent), radial-gradient(ellipse at right, hotpink, transparent); color: black; font-size: 20px; border: 2px groove silver; outline: none; border-radius: 5px; padding: 10px 25px; filter: brightness(0.7); transform: scale(0.9);}
+</style>
+<body>
+<div id="wiiopera">
+<span><img src="pointy.png"></span><span id="startpage"> Wii Word 2021</span>
+<br>
+<textarea rows="30" cols="150" onkeypress="newKeyS()" id="essay" placeholder="Write something..." readonly>
+This is a test, which it persuades effort. Squid Game, decimated player war.
+</textarea>
+<div class="orbinner" onclick="searchPopup4()">
+<button class="wiibutton" id="openkeyb" style="display: inline-block; position: relative; left: 40%;" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();">Open Keyboard</button>
+</div>
+<div id="keyboarda" style="display: none;">
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('1');newKeyS();">1</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('2');newKeyS();">2</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('3');newKeyS();">3</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('4');newKeyS();">4</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('5');newKeyS();">5</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('6');newKeyS();">6</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('7');newKeyS();">7</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('8');newKeyS();">8</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('9');newKeyS();">9</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('0');newKeyS();">0</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('-');newKeyS();">-</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.pop();newKeyS();">←</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('q');newKeyS();">q</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('w');newKeyS();">w</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('e');newKeyS();">e</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('r');newKeyS();">r</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('t');newKeyS();">t</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('y');newKeyS();">y</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('u');newKeyS();">u</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('i');newKeyS();">i</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('o');newKeyS();">o</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('p');newKeyS();">p</button>
+<button class="wiiky" id="enterd" style="filter: grayscale(100%);" onmousedown="alert('Enter key has been disabled. Please use keyboard to allow line-break keys.');document.getElementById('enterd').disabled = true;" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="document.getElementById('operaifm').style.display = 'block';document.getElementById('searchKey').style.display = 'none';okSearch();var kk = new Audio('enter.wav');kk.play();aaf = [];setTimeout(function(){document.getElementById('keyboarda').style.display = 'none';}, 100)">⏎</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.sort();var kk = new Audio('Spacebar.wav');kk.play();newKeyS();">Alpha</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('a');newKeyS();">a</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('s');newKeyS();">s</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('d');newKeyS();">d</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('f');newKeyS();">f</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('g');newKeyS();">g</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('h');newKeyS();">h</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('j');newKeyS();">j</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('k');newKeyS();">k</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('l');newKeyS();">l</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(':');newKeyS();">:</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.reverse();var kk = new Audio('Spacebar.wav');kk.play();newKeyS();">Reverse</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('z');newKeyS();">z</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('x');newKeyS();">x</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('c');newKeyS();">c</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('v');newKeyS();">v</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('b');newKeyS();">b</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('n');newKeyS();">n</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('m');newKeyS();">m</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(',');newKeyS();">,</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('.');newKeyS();">.</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('=');newKeyS();">=</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('[');newKeyS();">[</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(']');newKeyS();">]</button>
+<button class="wiiky" style="filter: hue-rotate(250deg); padding: 10px 60px;" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(' ');var kk = new Audio('Spacebar.wav');kk.play();">  Spacebar  </button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('\'');newKeyS();">'</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('`');newKeyS();">`</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('/');newKeyS();">/</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('@');newKeyS();">@</button>
+<br>
+<div id="keyboardoo" style="display: none;">
+<hr noshade>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('~');newKeyS();">~</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ą');newKeyS();">ą</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('č');newKeyS();">č</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ę');newKeyS();">ę</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ė');newKeyS();">ė</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('į');newKeyS();">į</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('š');newKeyS();">š</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ų');newKeyS();">ų</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ū');newKeyS();">ū</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('ž');newKeyS();">ž</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('*');newKeyS();">*</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('_');newKeyS();">_</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('+');newKeyS();">+</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('!');newKeyS();">!</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('#');newKeyS();">#</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('$');newKeyS();">$</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('%');newKeyS();">%</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('^');newKeyS();">^</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('&');newKeyS();">&amp;</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('(');newKeyS();">(</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(')');newKeyS();">)</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('{');newKeyS();">{</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('}');newKeyS();">}</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('|');newKeyS();">|</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('\');newKeyS();">\</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push(';');newKeyS();">;</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('?');newKeyS();">?</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('>');newKeyS();">></button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('<');newKeyS();"><</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('☺');newKeyS();">☺</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('☻');newKeyS();">☻</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♥');newKeyS();">♥</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♦');newKeyS();">♦</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♣');newKeyS();">♣</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♠');newKeyS();">♠</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('•');newKeyS();">•</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◘');newKeyS();">◘</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('○');newKeyS();">○</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◙');newKeyS();">◙</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♂');newKeyS();">♂</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♀');newKeyS();">♀</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♪');newKeyS();">♪</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♫');newKeyS();">♫</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('☼');newKeyS();">☼</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('►');newKeyS();">►</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◄');newKeyS();">◄</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('↕');newKeyS();">↕</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('‼');newKeyS();">‼</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('¶');newKeyS();">¶</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('§');newKeyS();">§</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('▬');newKeyS();">▬</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('↨');newKeyS();">↨</button>
+<br>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('↑');newKeyS();">↑</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('↓');newKeyS();">↓</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('→');newKeyS();">→</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('←');newKeyS();">←</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('∟');newKeyS();">∟</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('↔');newKeyS();">↔</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('▲');newKeyS();">▲</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('▼');newKeyS();">▼</button>
+<br>
+</div>
+<button class="wiibutton" id="usekeyboard" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('usekeyboard'),disabled = true;document.getElementById('essay').readOnly = false;clearInterval(aaap);">Use Keyboard</button>
+<button class="wiibutton" id="moresym" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('moresym'),disabled = true;document.getElementById('keyboardoo').style.display = 'block';">More Symbols...</button>
+<br>
+</div>
+</div>
+<script>
+var aaf = [];
+var aaap = setInterval(function(){document.getElementById('essay').value = aaf.join('')}, 200);
+function searchPopup4(){document.getElementById('keyboarda').style.display = "block";document.getElementById('openkeyb').style.display = "none";}
+var favrecn = [];
+</script>
+<script src="internet.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

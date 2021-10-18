@@ -12,7 +12,9 @@
 body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 #wiiopera { text-align: left; margin: 1cm; }
 .orb { background-image: radial-gradient(turquoise, royalblue); outline: none; border-radius: 50%; border: 2px solid cornflowerblue; }
+.orb:hover { background-image: radial-gradient(turquoise, royalblue); outline: none; border-radius: 50%; border: 2px solid cornflowerblue; cursor: pointer;}
 .orbinner { background: white; text-align: center; position: relative; }
+.orbinner:hover { background: white; text-align: center; position: relative; cursor: pointer; }
 #searchKey { background: #fff9ff; text-align: center; }
 #searchKB { background: white; color: royalblue; border: 4px groove cornflowerblue; outline-color: blue; border-radius: 5px;}
 #searchKB::placeholder { color: blue; }
@@ -29,13 +31,13 @@ body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 <div id="wiiopera">
 <span><img src="operaHome.png"></span><span id="startpage"> Start Page</span>
 <br>
-<div class="orbinner" onclick="searchPopup()">
+<div class="orbinner" onclick="searchPopup();var kk = new Audio('Highlight.wav');kk.play();">
 <button class="orb"><img src="symSearch.png" width="60px"></button><p>Search</p>
 </div>
 <div class="orbinner" onclick="alert('Coming Soon...')">
 <button class="orb"><img src="symFavorites.png" width="60px"></button><p>Favorites</p>
 </div>
-<div class="orbinner" style="display: none;" onclick="alert('Please click on Search button. This icon is deprecated.')">
+<div class="orbinner" onclick="window.location.assign('write.html');var kk = new Audio('Highlight.wav');kk.play();">
 <button class="orb"><img src="symURL.png" width="60px"></button><p>Web Address</p>
 </div>
 <div id="searchKey" style="display: none;">
@@ -141,7 +143,7 @@ body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 <button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('•');normalize();newKeyS();">•</button>
 <button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◘');normalize();newKeyS();">◘</button>
 <button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('○');normalize();newKeyS();">○</button>
-<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◙');normalize();newKeyS();">◙<</button>
+<button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('◙');normalize();newKeyS();">◙</button>
 <br>
 <button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♂');normalize();newKeyS();">♂</button>
 <button class="wiiky" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="aaf.push('♀');normalize();newKeyS();">♀</button>
