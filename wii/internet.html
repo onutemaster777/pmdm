@@ -196,12 +196,23 @@ body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 <button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="document.getElementById('operaifm').style.display = 'none';document.getElementById('operaifm').src = 'about:black;';document.getElementById('searchKey').style.display = 'none';var kk = new Audio('enter.wav');kk.play();aaf = [];setTimeout(function(){document.getElementById('keyboarda').style.display = 'none';document.getElementById('searchKB').value = '';}, 100)">Quit</button>
 <button class="wiibutton" id="usekeyboard" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('usekeyboard'),disabled = true;document.getElementById('searchKB').readOnly = false;clearInterval(aaap);">Use Keyboard</button>
 <button class="wiibutton" id="moresym" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('moresym'),disabled = true;document.getElementById('keyboardoo').style.display = 'block';">More Symbols...</button>
+<button class="wiibutton" id="pasteat" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('pasteat'),disabled = true;document.getElementById('keypaste').style.display = 'block';">Paste into Search</button>
 <button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();var ka = document.getElementById('keyboarda');ka.requestFullscreen()">Full Screen</button>
 <button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="document.getElementById('operaifm').style.display = 'block';document.getElementById('searchKey').style.display = 'none';okSearch();var kk = new Audio('enter.wav');kk.play();aaf = [];setTimeout(function(){document.getElementById('keyboarda').style.display = 'none';document.getElementById('searchKB').value = '';}, 100)">OK</button>
 <br>
+<div id="keypaste" style="display: none;">
+<hr noshade><hr noshade><p><b>Paste the link here. ▼</b></p>
+<br>
+<input type="text" id="inputMeN" placeholder="Paste... (clipboard)" style="width:300px;height: 40px;" onpaste="var kk = new Audio('Spacebar.wav');setTimeout(function(){aaf.push(document.getElementById('inputMeN').value)}, 300);kk.play();setTimeout(function(){document.getElementById('pasteat').disabled = false;document.getElementById('keypaste').style.display = 'none';}, 200);" onkeypress="newKeyS()" maxlength="1024">
+<br>
+<button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('Spacebar.wav');kk.play();document.getElementById('inputMeN').value = '';">Clear</button>
+<button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('pasteat').disabled = false;document.getElementById('keypaste').style.display = 'none';">Cancel</button>
+</div>
 </div>
 </div>
 <iframe src="about:blank;" width="800px" height="600px" id="operaifm" style="display: none;"></iframe>
+<br>
+<button class="wiibutton" style="display: inline-block; position: relative; left: 40%;" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();okFullscreen();">Go Fullscreen</button>
 </div>
 <script>
 var aaf = [];
