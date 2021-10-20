@@ -12,7 +12,7 @@ function Minevirus(){
 	var eee = prompt('Use:\n1 - with red changes\n2 - without red changes')
 	if(eee==="1"){
 		var eeka = ['minar.mp3','imovie.mp3'];
-		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play(
+		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play();
 		setInterval(function(){var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play()}, 220000); 
 		document.title = "YOU GOT MINEVIRUS!!! PLEASE PAY TO GOD!!!";
 		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*20000);
@@ -40,7 +40,7 @@ function Minevirus(){
 	else
 	if(eee==="2"){
 		var eeka = ['minar.mp3','imovie.mp3'];
-		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play(
+		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play();
 		setInterval(function(){var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play()}, 220000); 
 		document.title = "PRAY TO GOD BECAUSE VIRUS IS SPREADING!!!!!";
 		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*40000);
