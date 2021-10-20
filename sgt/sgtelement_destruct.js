@@ -4,7 +4,7 @@
 // sgtelement_destruct.js
 // Animated Function Style Destruction - The Code
 
-// version v1.0.1
+// version v1.0.3
 
 "use strict"
 
