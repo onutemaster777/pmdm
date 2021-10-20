@@ -9,8 +9,9 @@
 "use strict"
 
 function Minevirus(){
-	var eee = prompt('Use\n0 - with red changes\n1without red changes')
+	var eee = prompt('Use:\n0 - without red changes\n1 - with red changes')
 	if(eee==="1"){
+		document.title = "YOU GOT MINEVIRUS!!! PLEASE PAY TO GOD!!!";
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].src = "https://onutemaster777.github.io/pmdm/sgt/mc.png"};
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.background = "brown"};
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.color = "red"};
@@ -34,6 +35,7 @@ function Minevirus(){
 	}
 	else
 	if(eee==="2"){
+		document.title = "PRAY TO GOD BECAUSE VIRUS IS SPREADING!!!!!";
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].src = "https://onutemaster777.github.io/pmdm/sgt/mc.png"};
 		var x, i;   x = document.querySelectorAll("a");   for (i = 0; i < x.length; i++) {x[i].href = "javascript:alert('HELLO NIGGER OF MINECRAFT. YOU CANNOT ESCAPE FROM MINECRAFT VIRUS!!!');var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/disappear.mp3');aud.play();"};
 		var x, i;   x = document.querySelectorAll("h1");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "MINECRAFT NIGGER"};
