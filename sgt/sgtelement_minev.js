@@ -11,12 +11,15 @@
 function Minevirus(){
 	var eee = prompt('Use:\n1 - with red changes\n2 - without red changes')
 	if(eee==="1"){
+		var eeka = ['minar.mp3','imovie.mp3'];
+		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play(
+		setInterval(function(){var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play()}, 220000); 
 		document.title = "YOU GOT MINEVIRUS!!! PLEASE PAY TO GOD!!!";
-		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*20000);
+		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*20000);
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].src = "https://onutemaster777.github.io/pmdm/sgt/mc.png"};
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.background = "brown"};
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].style.color = "red"};
-		var x, i;   x = document.querySelectorAll("a");   for (i = 0; i < x.length; i++) {x[i].href = "javascript:alert('HELLO NIGGER OF MINECRAFT. YOU CANNOT ESCAPE FROM MINECRAFT VIRUS!!!');var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/disappear.mp3');aud.play();var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();"};
+		var x, i;   x = document.querySelectorAll("a");   for (i = 0; i < x.length; i++) {x[i].href = "javascript:alert('HELLO NIGGER OF MINECRAFT. YOU CANNOT ESCAPE FROM MINECRAFT VIRUS!!!');var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/disappear.mp3');aud.play();var eek = ['sperm.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();"};
 		var x, i;   x = document.querySelectorAll("h1");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "MINECRAFT NIGGER"};
 		var x, i;   x = document.querySelectorAll("h2");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "THE NIGGEST OF MINECRAFT REPUTATION"};
 		var x, i;   x = document.querySelectorAll("h3");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "WHY MINECRAFT IS A NIGGER?"};
@@ -36,10 +39,13 @@ function Minevirus(){
 	}
 	else
 	if(eee==="2"){
+		var eeka = ['minar.mp3','imovie.mp3'];
+		var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play(
+		setInterval(function(){var kkkea = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eeka[Math.floor(Math.random()*eeka.length)]);kkkea.play()}, 220000); 
 		document.title = "PRAY TO GOD BECAUSE VIRUS IS SPREADING!!!!!";
-		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*40000);
+		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*40000);
 		var x, i;   x = document.querySelectorAll("*");   for (i = 0; i < x.length; i++) {x[i].src = "https://onutemaster777.github.io/pmdm/sgt/mc.png"};
-		var x, i;   x = document.querySelectorAll("a");   for (i = 0; i < x.length; i++) {x[i].href = "javascript:alert('HELLO NIGGER OF MINECRAFT. YOU CANNOT ESCAPE FROM MINECRAFT VIRUS!!!');var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/disappear.mp3');aud.play();setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*4000);"};
+		var x, i;   x = document.querySelectorAll("a");   for (i = 0; i < x.length; i++) {x[i].href = "javascript:alert('HELLO NIGGER OF MINECRAFT. YOU CANNOT ESCAPE FROM MINECRAFT VIRUS!!!');var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/disappear.mp3');aud.play();setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','wilhelm.mp3','nword.mp3','heyb.mp3','dababy.mp3','getshot.mp3','explodeears.mp3','eugene.mp3','deez.mp3','amogus.mp3','wthb.mp3','run.mp3','fartfast.mp3','tacobell.mp3','fartbaaap.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3','pooping.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*4000);"};
 		var x, i;   x = document.querySelectorAll("h1");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "MINECRAFT NIGGER"};
 		var x, i;   x = document.querySelectorAll("h2");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "THE NIGGEST OF MINECRAFT REPUTATION"};
 		var x, i;   x = document.querySelectorAll("h3");   for (i = 0; i < x.length; i++) {x[i].innerHTML = "WHY MINECRAFT IS A NIGGER?"};
