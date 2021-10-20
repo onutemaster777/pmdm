@@ -9,7 +9,7 @@
 "use strict"
 
 function Minevirus(){
-	var eee = prompt('Use:\n0 - without red changes\n1 - with red changes')
+	var eee = prompt('Use:\n1 - with red changes\n2 - without red changes')
 	if(eee==="1"){
 		document.title = "YOU GOT MINEVIRUS!!! PLEASE PAY TO GOD!!!";
 		setInterval(function(){var eek = ['sperm.mp3','powerdown.mp3','nope.mp3','cartoonhit.mp3','botmute.mp3','beeprand.mp3','vineboom.mp3','dangermeme.mp3','amongus.mp3'];var kkke = new Audio('https://onutemaster777.github.io/pmdm/sgt/' + eek[Math.floor(Math.random()*eek.length)]);kkke.play();}, Math.random()*20000);
