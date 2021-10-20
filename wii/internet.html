@@ -34,7 +34,7 @@ body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 <div class="orbinner" onclick="searchPopup();var kk = new Audio('Highlight.wav');kk.play();">
 <button class="orb"><img src="symSearch.png" width="60px"></button><p>Search</p>
 </div>
-<div class="orbinner" onclick="alert('Coming Soon...')">
+<div class="orbinner" style="opacity: 0;" onclick="alert('Hello, this feature is deprecated.')">
 <button class="orb"><img src="symFavorites.png" width="60px"></button><p>Favorites</p>
 </div>
 <div class="orbinner" onclick="window.location.assign('write.html');var kk = new Audio('Highlight.wav');kk.play();">
@@ -205,14 +205,14 @@ body { text-align: center; font-family: Arial, "Droid Sans", sans-serif; }
 <div id="keypaste" style="display: none;">
 <hr noshade><hr noshade><p><b>Paste the link here. ▼</b></p>
 <br>
-<input type="text" id="inputMeN" placeholder="Paste... (clipboard)" style="width:300px;height: 40px;" onpaste="var kk = new Audio('Spacebar.wav');setTimeout(function(){aaf.push(document.getElementById('inputMeN').value)}, 300);kk.play();setTimeout(function(){document.getElementById('pasteat').disabled = false;document.getElementById('keypaste').style.display = 'none';}, 200);" onkeypress="newKeyS()" maxlength="1024">
+<input type="text" id="inputMeN" placeholder="Paste... 1024 char. (clipboard)" style="width:300px;height: 40px;" onpaste="var kk = new Audio('Spacebar.wav');setTimeout(function(){aaf.push(document.getElementById('inputMeN').value)}, 300);kk.play();setTimeout(function(){document.getElementById('pasteat').disabled = false;document.getElementById('keypaste').style.display = 'none';}, 200);" onkeypress="newKeyS()" maxlength="1024">
 <br>
 <button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('Spacebar.wav');kk.play();document.getElementById('inputMeN').value = '';">Clear</button>
 <button class="wiibutton" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();document.getElementById('pasteat').disabled = false;document.getElementById('keypaste').style.display = 'none';">Cancel</button>
 </div>
 </div>
 </div>
-<iframe src="about:blank;" width="800px" height="600px" id="operaifm" style="display: none;"></iframe>
+<iframe src="about:blank;" width="800px" height="600px" id="operaifm" style="display: none;background: white;">Error not supported</iframe>
 <br>
 <button class="wiibutton" style="display: inline-block; position: relative; left: 40%;" onmouseover="var kk = new Audio('Highlight.wav');kk.play();" onclick="var kk = new Audio('enter.wav');kk.play();okFullscreen();">Go Fullscreen</button>
 </div>
