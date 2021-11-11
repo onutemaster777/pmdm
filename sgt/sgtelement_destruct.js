@@ -4,7 +4,7 @@
 // sgtelement_destruct.js
 // Animated Function Style Destruction - The Code
 
-// version v1.0.3
+// version v1.0.4
 
 "use strict"
 
@@ -42,7 +42,7 @@ function Destruction(){
 		var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/mysterious.mp3');aud.play();
 		setInterval(function(){var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/mysterious.mp3');aud.play();}, 21000)
 		var eeeaa = Math.floor(Math.random()*9);
-		addEventListener('click', function(ev) {var eea1 = 0; for (let i = 0; i < Math.floor(Math.random()*4); i++) {score++}; document.title = "Score: " + score; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/dig.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "1s"; el.style.transform = "rotate(" + Math.random()*360 + "deg)"; eeeaa = Math.floor(Math.random()*9); if(eeeaa===2){el.style.transition = "1s"; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/break.mp3');aud.play(); el.style.transform = "scaleY(" + Math.random()*0.5 + "." + Math.floor(Math.random()*10) + ")";el.style.transform = "scaleX(" + Math.random()*0.5 + "." + Math.floor(Math.random()*10) + ")";el.style.transform = "opacity(0)";for (let i = 0; i < Math.floor(Math.random()*400); i++) {score++};document.title = "Score: " + score;setTimeout(function(){for (let i = 0; i < el.children.length; i++) {score++};document.title = "Bonus Score: " + score;el.remove()}, 1000)}; rfs.call(el);});
+		addEventListener('click', function(ev) {var eea1 = 0; for (let i = 0; i < Math.floor(Math.random()*4); i++) {score++}; document.title = "Score: " + score; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/dig.mp3');aud.play(); var el = ev.target, rfs = el.style.transition = "1s"; el.style.transform = "rotate(" + Math.random()*360 + "deg)"; eeeaa = Math.floor(Math.random()*9); if(eeeaa===2){el.style.transition = "1s"; var aud = new Audio('https://onutemaster777.github.io/pmdm/sgt/break.mp3');aud.play(); el.style.transform = "scaleY(0." + Math.floor(Math.random()*10) + ")";el.style.opacity = "0";for (let i = 0; i < Math.floor(Math.random()*400); i++) {score++};document.title = "Score: " + score;setTimeout(function(){for (let i = 0; i < el.children.length; i++) {score++};document.title = "Bonus Score: " + score;el.remove()}, 1000)}; rfs.call(el);});
 	}
 	else
 	if(eee==="6"){
