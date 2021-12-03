@@ -54,6 +54,7 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <option id="jabbaMethod12" value="selRandLet">Short Letter Model (54,445 words)</option>
 <option id="jabbaMethod13" value="selBin">Binary Model (256 words)</option>
 <option id="jabbaMethod14" value="selHex">Hexadecimal Model (256 words)</option>
+<option id="jabbaMethod15" value="selSwear">Racist Model (1,395 words)</option>
 </select>
 <br>
 <p>Enter the amount.</p>
@@ -140,6 +141,11 @@ document.getElementById('jabbaInput').addEventListener('change', function (e) {
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
   if (e.target.value === "selHex") {
     document.getElementById('jabbaWordMax').value = 256;
+  }
+});
+document.getElementById('jabbaInput').addEventListener('change', function (e) {
+  if (e.target.value === "selSwear") {
+    document.getElementById('jabbaWordMax').value = 1395;
   }
 });
 	function downloadhex(){saveTextAs(document.getElementById('g').value, "JabbaGen_" + Math.floor(Math.random()*99999999) + ".txt")}
