@@ -57,7 +57,6 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <option id="jabbaMethod15" value="selSwear">Racist Model (1,395 words)</option>
 <option id="jabbaMethod16" value="selBurmese">Burmese Model (41,344 words)</option>
 <option id="jabbaMethod17" value="selJMC">Chinese Model (406,591 words)</option>
-<option id="jabbaMethod18" value="selLT">Lithuanian Model (83,258 words)</option>
 </select>
 <br>
 <p>Enter the amount.</p>
@@ -154,11 +153,6 @@ document.getElementById('jabbaInput').addEventListener('change', function (e) {
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
   if (e.target.value === "selBurmese") {
     document.getElementById('jabbaWordMax').value = 41344;
-  }
-});
-document.getElementById('jabbaInput').addEventListener('change', function (e) {
-  if (e.target.value === "selLT") {
-    document.getElementById('jabbaWordMax').value = 83258;
   }
 });
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
