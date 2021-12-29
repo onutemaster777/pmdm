@@ -55,6 +55,9 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <option id="jabbaMethod13" value="selBin">Binary Model (256 words)</option>
 <option id="jabbaMethod14" value="selHex">Hexadecimal Model (256 words)</option>
 <option id="jabbaMethod15" value="selSwear">Racist Model (1,395 words)</option>
+<option id="jabbaMethod16" value="selBurmese">Burmese Model (41,344 words)</option>
+<option id="jabbaMethod17" value="selJMC">Chinese Model (406,591 words)</option>
+<option id="jabbaMethod18" value="selLT">Lithuanian Model (83,258 words)</option>
 </select>
 <br>
 <p>Enter the amount.</p>
@@ -63,7 +66,7 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <br>
 <p>Enter the maximum word.</p>
 <br>
-<input type="text" placeholder="Min to Max (default 3024)" value="1027" id="jabbaWordMax">
+<input type="text" placeholder="Min to Max (default 3024)" value="1500" id="jabbaWordMax">
 <br><br>
 <button onclick="generate()">Generate</button>
 <br><br><br>
@@ -75,7 +78,7 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <script>
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
   if (e.target.value === "selJM") {
-    document.getElementById('jabbaWordMax').value = 1027;
+    document.getElementById('jabbaWordMax').value = 1500;
   }
 });
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
@@ -146,6 +149,21 @@ document.getElementById('jabbaInput').addEventListener('change', function (e) {
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
   if (e.target.value === "selSwear") {
     document.getElementById('jabbaWordMax').value = 1395;
+  }
+});
+document.getElementById('jabbaInput').addEventListener('change', function (e) {
+  if (e.target.value === "selBurmese") {
+    document.getElementById('jabbaWordMax').value = 41344;
+  }
+});
+document.getElementById('jabbaInput').addEventListener('change', function (e) {
+  if (e.target.value === "selLT") {
+    document.getElementById('jabbaWordMax').value = 83258;
+  }
+});
+document.getElementById('jabbaInput').addEventListener('change', function (e) {
+  if (e.target.value === "selJMC") {
+    document.getElementById('jabbaWordMax').value = 406591;
   }
 });
 	function downloadhex(){saveTextAs(document.getElementById('g').value, "JabbaGen_" + Math.floor(Math.random()*99999999) + ".txt")}
