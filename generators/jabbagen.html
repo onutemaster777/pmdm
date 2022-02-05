@@ -61,23 +61,27 @@ button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; 
 <br>
 <p>Enter the amount.</p>
 <br>
-<input type="text" placeholder="Amount (recommended 200)" value="200" id="jabbaWordAmount">
+<input type="text" placeholder="Amount (recommended 100)" value="100" id="jabbaWordAmount">
 <br>
 <p>Enter the maximum word.</p>
 <br>
-<input type="text" placeholder="Min to Max (default 3024)" value="1500" id="jabbaWordMax">
+<input type="text" placeholder="Min to Max" value="3044" id="jabbaWordMax">
+	<br><br>
+	<button onclick="document.getElementById('jabbaWordMax').value = Math.floor(Math.random()*10000)">Randomize</button>
 <br><br>
 <button onclick="generate()">Generate</button>
 <br><br><br>
-	<textarea id="g" rows="20" cols="100" placeholder="This is will appear right here." spellcheck="false"></textarea>
+	<textarea id="g" rows="20" cols="100" placeholder="This will appear right here." spellcheck="false"></textarea>
 	<br><br><br>
 	<button onclick="downloadhex()">Download .txt</button>
 	<p>Jabba Saulute Generator is a generator where you can anonymize, speak bad English, and think people if you are not speaking English correctly. Just type the amount, and you copy the text, then paste it somewhere else like Discord or Reddit. Select a text generation model from the menu, and click "Generate", and also you can save as text if you need to.</p>
+	<p><b>IN SOME CASES FOR YOUTUBE, IT WILL BE DELETED IMMEDIATELY BY AUTOMATED BOT. </b> YouTube self-botting will sometimes cause channel termination.</p>
+	<p><b>ONLY CHATTING CLYDE PLATFORM </b> Discord is perfectly allowed to post and send mixed terrible sentences, but however, you can get banned for offensive, or bad English property.</p>
 <script src="jabbaModels.js"></script>
 <script>
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
   if (e.target.value === "selJM") {
-    document.getElementById('jabbaWordMax').value = 1500;
+    document.getElementById('jabbaWordMax').value = 3044;
   }
 });
 document.getElementById('jabbaInput').addEventListener('change', function (e) {
