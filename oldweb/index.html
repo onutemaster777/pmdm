@@ -275,7 +275,7 @@ body { text-align: center; color: black; background: white; font-family: "Tahoma
 <h1>JavaScript is disabled.</h1>
 <p>Please enable JavaScript in your browser settings to run it properly.</p>
 </noscript>
-<iframe src="http://web.archive.org/web/20041130132508/http://google.com" onbeforeunload="document.getElementById('loadingBar').style.display = 'block'" onloadstart="document.getElementById('loadingBar').style.display = 'block'" onload="document.getElementById('loadingBar').style.display = 'none';document.title = '✔ ' + document.getElementById('addressBar').value + ' - Internet Time Travel';" width="800" height="600" id="webClient">
+<iframe src="https://web.archive.org/web/20041130132508/http://google.com" onbeforeunload="document.getElementById('loadingBar').style.display = 'block'" onloadstart="document.getElementById('loadingBar').style.display = 'block'" onload="document.getElementById('loadingBar').style.display = 'none';document.title = '✔ ' + document.getElementById('addressBar').value + ' - Internet Time Travel';" width="800" height="600" id="webClient">
 HTML iframe feature is not supported.
 </iframe>
 </div>
@@ -292,10 +292,10 @@ input.addEventListener("keypress", function(event) {
 
 function searchNow(){
 if(navigator.onLine === true){
-if(document.getElementById('addressBar').value === ""){var ee = document.getElementById('clientHome');ee.click();document.title = "Internet Time Travel";} else {document.getElementById('webClient').src = 'http:\/\/web.archive.org\/web\/20041130132508\/' + document.getElementById('addressBar').value;document.title = document.getElementById('addressBar').value + " - Internet Time Travel";}}
+if(document.getElementById('addressBar').value === ""){var ee = document.getElementById('clientHome');ee.click();document.title = "Internet Time Travel";} else {document.getElementById('webClient').src = 'https:\/\/web.archive.org\/web\/20041130132508\/' + document.getElementById('addressBar').value;document.title = document.getElementById('addressBar').value + " - Internet Time Travel";}}
 else {document.getElementById('webClient').src = "data:text/html,<!doctype html><head><title></title></head><style>body { text-align:; font-family: Arial, Tahoma, sans-serif; background: white;}</style><html><h1>You\'re offline</h1><br><p>The address " + document.getElementById('addressBar').value + " is not available, because why:</p><br><li>Your router is not configured properly.</li><li>You need Internet to connect.</li><li>Your router is restarted.</li><li>Your router was hacked or died.</li><br><p>Please connect your Internet connection to surf.</p></html>";}}
 
-function homePage(){document.getElementById('webClient').src = "http://web.archive.org/web/20041130132508/" + searchHome}
+function homePage(){document.getElementById('webClient').src = "https://web.archive.org/web/20041130132508/" + searchHome}
 
 function disableTitle(){setInterval(function(){document.title = 'Internet Time Travel'}, 50);}
 
