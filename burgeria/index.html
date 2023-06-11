@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Papa's Burgeria hacking</title>
+<meta charset="UTF-8">
+<meta data-react-helmet="true" property="og:title" content="Burgeria game hacking">
+<meta data-react-helmet="true" property="og:description" content="Learn how to use and hack Papa's Burgeria" />
+
+<style>
+body { text-align: center; background-image: linear-gradient(to bottom, green, lime, green); font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif; }
+blockquote, iframe, #sloppy { text-align: center; margin-left: 200px; }
+#menu { background: black; background-image: radial-gradient(ellipse at bottom, blue, hotpink, lime); display: flex; white-space: pre-wrap;}
+#menu a { text-decoration: none; color: white; font-family: "Microsoft YaHei", Arial, sans-serif; transition: 0.3s; background: black; background-image: radial-gradient(ellipse at center, orangered, orange, brown, chocolate); }
+#menu a:active { text-decoration: none; color: white; font-family: "Microsoft YaHei", Arial, sans-serif; background: hotpink; background-image: radial-gradient(ellipse at center, pink, hotpink, white); }
+#menu a:hover { text-decoration: none; color: black; font-family: "Microsoft YaHei", Arial, sans-serif; background: white; background-image: radial-gradient(ellipse at center, #c6c8cc, #5d7af2, #44c549, #ff4546, #2e7dd0, #af70af, #38b2e1, #404040, #7e7d7f, #dde3ed, #fefd33); }
+#sloppy {background-image: linear-gradient(45deg, #c6c8cc, #5d7af2, #44c549, #ff4546, #2e7dd0, #af70af, #38b2e1, #404040, #7e7d7f, #dde3ed, #fefd33); max-width: 500px; display: inline-flex;}
+#logo {transform: scale(1); transition: 1s; }
+// #logo:hover {transform: scaleY(0.7); }
+// #logo:active {transform: scaleY(0.5); }
+#timeBanner { background: orangered;font-family: "Papyrus", "Times New Roman", sans-serif;}
+hr { color: black; background: black; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: black;
+}
+
+::-webkit-scrollbar:track {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: orangered;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: orangered;
+}
+
+@keyframes rainbow {
+    0%, 100% {
+        color: yellow;
+    }
+    33% {
+        color: hotpink;
+    }
+    66% {
+        color: cyan;
+    }
+}
+
+#dvd {
+    animation: rainbow 60s linear infinite;
+}
+
+@keyframes rainbow2 {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    33% {
+        filter: hue-rotate(180deg);
+    }
+    66% {
+        filter: hue-rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+<div id="main">
+<img src="/logo.png" alt="OnuteWORLD.tk - The Final Promotive Release" width="500px" id="logo">
+<br>
+<h1>OnuteWORLD.tk - The Final Promotive Release</h1>
+<h3>A official site that leaks EVERYTHING in the first place!</h3>
+<br>
+<h1>How to hack Papa's Burgeria</h1>
+<p>As you may heard the game from Flipline Studios back in 2010 and you've discovered the cooking game, like it was Papa's Pizzeria and we all played it before.<br>
+This is the second game of Papa's Burgeria and we all know how to order and serve, but the game mechanics are different, like you can't put anything on, but in build station you can add wrong toppings while training.<br>
+Are you tired for the original game and change something best? We have our options to get you started.</p>
+<br>
+<h1>1. Custom Orders</h1>
+<p>Custom orders is the number one to change your own toppings.</p>
+<h2>From CustomerData - toppings</h2>
+<p>Each topping for the customer has have to order it. Example of Wally's order in code:</p>
+<p>Each topping has 9 items you can add, but if you add one extra topping, it will cut.</p>
+<code>_loc1_.customerOrders.push([["bun_heel"],["patty",4],["mayo"],["lettuce"],["onion"],["mayo"],["bun_top"]]);</code>
+<p>Each customer has their own order and their topping, so there are the list of toppings you can change:</p>
+<ol>
+<li>["bun_heel"] - Bottom Bun</li>
+<li>["mayo"] - Mayo/Mayonnaise (sauce)</li>
+<li>["lettuce"] - Lettuce</li>
+<li>["onion"] - Onion</li>
+<li>["bun_top"] - Top Bun</li>
+<li>["cheese"] - Cheese</li>
+<li>["mustard"] - Mustard (sauce)</li>
+<li>["ketchup"] - Ketchup (sauce)</li>
+<li>["bbq"] - BBQ (sauce)</li>
+<li>["pickle"] - Pickle/Cucumber</li>
+<li>["tomato"] - Tomato</li>
+</ol>
+<h2>Burger values:</h2>
+<ol>
+<li>["patty",-1] - Negative time burger (impossible)</li>
+<li>["patty",0] - Raw (no time) burger</li>
+<li>["patty",1] - Half time burger</li>
+<li>["patty",2] - Slightly normal burger (blue)</li>
+<li>["patty",3] - Ahead from normal cooked burger</li>
+<li>["patty",4] - Normal cooked burger (yellow)</li>
+<li>["patty",5] - Slightly hot burger (blue, yellow and red will show up)</li>
+<li>["patty",6] - Hot burger</li>
+<li>["patty",7] - Ahead from overcooked burger</li>
+<li>["patty",8] - Burned burger</li>
+</ol>
+<p>After you apply it, make sure to remember every customer's topping that you haven't touched.</p>
+<p>If you can't do it, you can use to modify/add <a href="burgeria_topping.html">customer's topping!</a></p>
+<hr noshade>
+<h1>2. Points/Money</h1>
+<p>Tired of getting low score from Papa's Burgeria? There's a hack that you can do it by decompiling the game code.</p>
+<h2>How to do:</h2>
+<p>burgerGame > screens > giveOrderScreen</p>
+<p>Find 3 stations when the order is given to customer, so replace with any number. Money is located somewhere in the middle, lots of divisions, so put a small number like 5 or even 0 (money will be infinity, because of 0 divided by 0).</p>
+<p>If you put 100 in all three stations, you can use topping or burger if you want (like custom food) and giving an order will make customer always overjoyed.</p>
+<p>If you put 0 in all three stations, everyone will lie and get pissed for your order. This is happens if Flipline Studios manipulated people to hate in those shops!</p>
+<hr noshade>
+<br>
+<br>
+<p>All rights reserved. OnuteWORLD Server Ltd. 2019-2023.</p>
+<iframe src="https://ezstat.ru/2RqKe7" width="1" height="1">go fuck your mom</iframe>
+</body>
+</html>

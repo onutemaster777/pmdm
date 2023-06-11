@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Papa's Burgeria hacking</title>
+<meta charset="UTF-8">
+<meta data-react-helmet="true" property="og:title" content="Burgeria game hacking">
+<meta data-react-helmet="true" property="og:description" content="Learn how to use and hack Papa's Burgeria" />
+
+<style>
+body { text-align: center; background-image: linear-gradient(to bottom, green, lime, green); font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif; }
+blockquote, iframe, #sloppy { text-align: center; margin-left: 200px; }
+#menu { background: black; background-image: radial-gradient(ellipse at bottom, blue, hotpink, lime); display: flex; white-space: pre-wrap;}
+#menu a { text-decoration: none; color: white; font-family: "Microsoft YaHei", Arial, sans-serif; transition: 0.3s; background: black; background-image: radial-gradient(ellipse at center, orangered, orange, brown, chocolate); }
+#menu a:active { text-decoration: none; color: white; font-family: "Microsoft YaHei", Arial, sans-serif; background: hotpink; background-image: radial-gradient(ellipse at center, pink, hotpink, white); }
+#menu a:hover { text-decoration: none; color: black; font-family: "Microsoft YaHei", Arial, sans-serif; background: white; background-image: radial-gradient(ellipse at center, #c6c8cc, #5d7af2, #44c549, #ff4546, #2e7dd0, #af70af, #38b2e1, #404040, #7e7d7f, #dde3ed, #fefd33); }
+#sloppy {background-image: linear-gradient(45deg, #c6c8cc, #5d7af2, #44c549, #ff4546, #2e7dd0, #af70af, #38b2e1, #404040, #7e7d7f, #dde3ed, #fefd33); max-width: 500px; display: inline-flex;}
+#logo {transform: scale(1); transition: 1s; }
+// #logo:hover {transform: scaleY(0.7); }
+// #logo:active {transform: scaleY(0.5); }
+#timeBanner { background: orangered;font-family: "Papyrus", "Times New Roman", sans-serif;}
+hr { color: black; background: black; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: black;
+}
+
+::-webkit-scrollbar:track {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: orangered;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: orangered;
+}
+
+@keyframes rainbow {
+    0%, 100% {
+        color: yellow;
+    }
+    33% {
+        color: hotpink;
+    }
+    66% {
+        color: cyan;
+    }
+}
+
+#dvd {
+    animation: rainbow 60s linear infinite;
+}
+
+@keyframes rainbow2 {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    33% {
+        filter: hue-rotate(180deg);
+    }
+    66% {
+        filter: hue-rotate(360deg);
+    }
+}
+#linemaker { display: inline-block; background: orangered; color: black; max-width: 500px; text-align: center;}
+</style>
+</head>
+<body>
+<div id="main">
+<img src="/logo.png" alt="OnuteWORLD.tk - The Final Promotive Release" width="500px" id="logo">
+<br>
+<h1>OnuteWORLD.tk - The Final Promotive Release</h1>
+<h3>A official site that leaks EVERYTHING in the first place!</h3>
+<br>
+<p><a href="index.html">Back to blog</a></p>
+<div id="linemaker">
+<h1>Papa's Burgeria Custom order maker</h1>
+<br>
+<textarea id="toppinglist" rows="10" cols="50" readonly style="resize: none;" placeholder="Click on the toppings to add it!">
+</textarea>
+<br>
+<h3>Toppings</h3>
+<button id="bun_bottom_button" onclick='toppings.push(`["bun_heel"]`);toppingCount--;'>Bottom bun</button>
+<button id="bun_top_button" onclick='toppings.push(`["bun_top"]`);toppingCount--;'>Top bun</button>
+<button id="cheese_button" onclick='toppings.push(`["cheese"]`);toppingCount--;'>Cheese</button>
+<button id="pickle_button" onclick='toppings.push(`["pickle"]`);toppingCount--;'>Pickle</button>
+<button id="onion_button" onclick='toppings.push(`["onion"]`);toppingCount--;'>Onion</button>
+<button id="lettuce_button" onclick='toppings.push(`["lettuce"]`);toppingCount--;'>Lettuce</button>
+<button id="tomato_button" onclick='toppings.push(`["tomato"]`);toppingCount--;'>Tomato</button>
+<button id="ketchup_button" onclick='toppings.push(`["ketchup"]`);toppingCount--;'>Ketchup</button>
+<button id="mustard_button" onclick='toppings.push(`["mustard"]`);toppingCount--;'>Mustard</button>
+<button id="mayo_button" onclick='toppings.push(`["mayo"]`);toppingCount--;'>Mayo</button>
+<button id="bbq_button" onclick='toppings.push(`["bbq"]`);toppingCount--;'>BBQ</button>
+<br>
+<h3>Burger</h3>
+<input type="range" id="burgerTypeChange" min="-1" max="8" value="4">
+<p id="burgerType" style="font-weight: bold;">Normal burger</p>
+<button id="patty_button" onclick="addToppingBurg();toppingCount--;">Add burger</button>
+<p>You have <span id="toppings_left">0</span> toppings left.</p>
+<button onclick="toppings = [];toppingCount = 9;" style="color:red;">Remove all</button>
+</div>
+<br>
+<br>
+<p>All rights reserved. OnuteWORLD Server Ltd. 2019-2023.</p>
+<iframe src="https://ezstat.ru/2RqKe7" width="1" height="1">go fuck your mom</iframe>
+<script>
+var toppingcode = ["_loc1_.customerOrders.push(["];
+var toppingcodeend = ["]);"];
+var toppings = [];
+var toppingCount = 9;
+
+function addToppingBurg(){toppings.push(`["patty",` + document.getElementById('burgerTypeChange').value + `]`);}
+
+setInterval(function(){
+if(toppingCount < "1"){
+document.getElementById('bun_bottom_button').style.display = "none";
+document.getElementById('bun_top_button').style.display = "none";
+document.getElementById('cheese_button').style.display = "none";
+document.getElementById('pickle_button').style.display = "none";
+document.getElementById('onion_button').style.display = "none";
+document.getElementById('lettuce_button').style.display = "none";
+document.getElementById('tomato_button').style.display = "none";
+document.getElementById('ketchup_button').style.display = "none";
+document.getElementById('mustard_button').style.display = "none";
+document.getElementById('mayo_button').style.display = "none";
+document.getElementById('bbq_button').style.display = "none";
+document.getElementById('patty_button').style.display = "none";
+} else {
+document.getElementById('bun_bottom_button').style.display = "inline-block";
+document.getElementById('bun_top_button').style.display = "inline-block";
+document.getElementById('cheese_button').style.display = "inline-block";
+document.getElementById('pickle_button').style.display = "inline-block";
+document.getElementById('onion_button').style.display = "inline-block";
+document.getElementById('lettuce_button').style.display = "inline-block";
+document.getElementById('tomato_button').style.display = "inline-block";
+document.getElementById('ketchup_button').style.display = "inline-block";
+document.getElementById('mustard_button').style.display = "inline-block";
+document.getElementById('mayo_button').style.display = "inline-block";
+document.getElementById('bbq_button').style.display = "inline-block";
+document.getElementById('patty_button').style.display = "inline-block";
+};
+}, 1);
+
+setInterval(function(){
+if(document.getElementById('burgerTypeChange').value == -1){
+document.getElementById('burgerType').innerHTML = "Impossible burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 0){
+document.getElementById('burgerType').innerHTML = "Raw meat burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 1){
+document.getElementById('burgerType').innerHTML = "Slightly good burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 2){
+document.getElementById('burgerType').innerHTML = "Good burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 3){
+document.getElementById('burgerType').innerHTML = "Ahead from cooked";
+}
+else if(document.getElementById('burgerTypeChange').value == 4){
+document.getElementById('burgerType').innerHTML = "Cooked burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 5){
+document.getElementById('burgerType').innerHTML = "Mild burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 6){
+document.getElementById('burgerType').innerHTML = "Hot burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 7){
+document.getElementById('burgerType').innerHTML = "Severe hot burger";
+}
+else if(document.getElementById('burgerTypeChange').value == 8){
+document.getElementById('burgerType').innerHTML = "Burned burger";
+}
+}, 1);
+setInterval(function(){document.getElementById('toppings_left').innerHTML = toppingCount}, 1);
+setInterval(function(){document.getElementById('toppinglist').value = toppingcode + toppings + toppingcodeend;}, 1);
+</script>
+</body>
+</html>
