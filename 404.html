@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-body { text-align: center; font-family: Tahoma, Arial, sans-serif; cursor: url("/def.png"), default; }
-a {cursor: url("/poi.png"), pointer;}
+body { text-align: center; font-family: Tahoma, Arial, sans-serif; }
 .credits {text-align: right;}
 .dialog {display: inline-block; padding: 4px 4px; border: 1px solid black; border-radius: 10px; background: silver; max-width: 100%;}
 .dialogImage {text-align: left; float: left; padding: 50px;}
@@ -14,7 +13,7 @@ a {cursor: url("/poi.png"), pointer;}
 </head>
 <body>
 <div id="main" class="dialog">
-<img src="/shutdown/error.png" class="dialogImage" width="50px">
+<img src="/pmdm/caution.png" class="dialogImage" width="50px">
 <h1>404 Not Found</h1>
 <p>The page that you are looking is not available at this time.</p>
 <br>
@@ -26,18 +25,12 @@ a {cursor: url("/poi.png"), pointer;}
 <li>Copyright or fanbase removal request.</li>
 </ol>
 <br>
-<p>Or try some random funny images here.</p>
-<img src="/shutdown/7.png" width="300px" height="200px" id="orimghere" alt="Incredible Titles">
-<br>
-<a href="/">Back to Home</a>
+<a href="/pmdm/">Back to Home</a>
 <br><br>
 <p class="credits">All rights reserved. OnuteWORLD Server Ltd. 2019-2023.</p>
 </div>
 <script>
 // ONUTEWORLD.TK LTD 2023/05/20
-var imgs = ["/shutdown/1.png","/shutdown/2.png","/shutdown/3.png","/shutdown/4.png","/shutdown/5.png","/shutdown/6.png","/shutdown/7.png","/shutdown/8.png","/shutdown/9.png","/shutdown/10.png"];
-document.getElementById("orimghere").src = imgs[Math.floor(Math.random()*imgs.length)];
-
 document.getElementById("isCorrectURL").innerHTML = window.location.pathname;
 </script>
 </body>
