@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PasteMasterDoesMatter</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="theme-color" content="black">
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css"> 
-	<script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.3.5/sizzle.min.js"></script> 
-	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="http://benahm.github.io/jquery.throwable/javascripts/libs/jquery-1.9.0/jquery.min.js" type="text/javascript"></script> 
-    <script src="http://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js" type="text/javascript"></script>
-	<script src="filesaver.js"></script>
-	<meta data-react-helmet="true" charset="utf-8">
-	<meta data-react-helmet="true" property="og:title" content="PasteMasterDoesMatter">
-	<meta data-react-helmet="true" property="og:description" content="Error">
-	<meta data-react-helmet="true" name="description" content="Error">
-</head>
+<title>Not Found</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-body { background: silver; font-family: Tahoma, Helvetica, Roboto, sans-serif; text-align: center; }
-
-textarea { font-family: Tahoma, Helvetica, Roboto, sans-serif; background: white; outline: none; resize: none; color: black; box-shadow: 2px 2px 15px red, -2px 2px 15px lime, 2px -2px 15px yellow, -2px -2px 15px cyan;}
-textarea:hover { background: white; outline: none; resize: none; color: blue; }
-textarea:active { background: white; outline: none; resize: none; color: blue; }
-
-button { font-family: Tahoma, Helvetica, Roboto, sans-serif; padding: 10px 10px; border: 1px inset green; background: yellowgreen; color: white; box-shadow: 0px 2px 4px turquoise, 0px 4px 4px blue; outline: none;}
-button:active { padding: 10px 10px; border: 1px inset red; background: orangered; color: beige; box-shadow: 0px 2px 4px firebrick; outline: none;}
-button:hover { padding: 10px 10px; border: 1px inset beige; background: yellow; color: black; box-shadow: 0px 2px 4px greenyellow; outline: none;}
+body { text-align: center; font-family: Tahoma, Arial, sans-serif; cursor: url("/def.png"), default; }
+a {cursor: url("/poi.png"), pointer;}
+.credits {text-align: right;}
+.dialog {display: inline-block; padding: 4px 4px; border: 1px solid black; border-radius: 10px; background: silver; max-width: 100%;}
+.dialogImage {text-align: left; float: left; padding: 50px;}
 </style>
+</head>
 <body>
-<a href="index.html"><img src="generator_home.png" width="100px" style="border-radius: 10px; filter: drop-shadow(2px 2px 5px black);"></a>
-<h1 style="text-shadow: 4px 4px 2px grey;">PasteMasterDoesMatter</h1>
+<div id="main" class="dialog">
+<img src="/shutdown/error.png" class="dialogImage" width="50px">
+<h1>404 Not Found</h1>
+<p>The page that you are looking is not available at this time.</p>
 <br>
-<h2>404</h2>
-<p>You found a page but isn't a page, it's a 404 error page. I want to show!</p>
-<p><a href="index.html">Return to home</a></p>
+<p><b>Reasons:</b></p>
+<ol>
+<li>Check <span id="isCorrectURL"></span> if there's a typo in this URL.</li>
+<li>The resource you are looking is deleted or is no longer available.</li>
+<li>The page has been permanently moved.</li>
+<li>Copyright or fanbase removal request.</li>
+</ol>
 <br>
-<p>All rights reserved. OnuteWORLD Server Ltd. 2021</p>
+<p>Or try some random funny images here.</p>
+<img src="/shutdown/7.png" width="300px" height="200px" id="orimghere" alt="Incredible Titles">
+<br>
+<a href="/">Back to Home</a>
+<br><br>
+<p class="credits">All rights reserved. OnuteWORLD Server Ltd. 2019-2023.</p>
+</div>
 <script>
-setInterval(function(){document.title = "PasteMasterDoesMatter"}, 1)
+// ONUTEWORLD.TK LTD 2023/05/20
+var imgs = ["/shutdown/1.png","/shutdown/2.png","/shutdown/3.png","/shutdown/4.png","/shutdown/5.png","/shutdown/6.png","/shutdown/7.png","/shutdown/8.png","/shutdown/9.png","/shutdown/10.png"];
+document.getElementById("orimghere").src = imgs[Math.floor(Math.random()*imgs.length)];
+
+document.getElementById("isCorrectURL").innerHTML = window.location.pathname;
 </script>
 </body>
 </html>
